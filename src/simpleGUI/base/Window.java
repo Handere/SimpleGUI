@@ -1,4 +1,4 @@
-package simpleGUI.scene;
+package simpleGUI.base;
 
 public class Window {
 }
