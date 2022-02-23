@@ -113,7 +113,7 @@ public class allClientCode {
     int width = 500;
     static void createWindow(int height, int width){
         Window = createFrame(height, width);
-        ShowInGUI(frame);
+        showInGUI(frame);
     }
 
 
