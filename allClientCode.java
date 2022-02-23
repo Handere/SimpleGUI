@@ -76,9 +76,9 @@ public class allClientCode {
 
 
     //Scenario 1.4: Skriv en tekststreng i csv format til ønsket csv fil
-//Alt 1
+    //Alt 1
     String stringToBeWrittenToCSVFile;
-FileReader.writeToCSVFile("example.csv", stringToBeWrittenToCSVFile);
+    FileReader.writeToCSVFile("example.csv", stringToBeWrittenToCSVFile);
 
     //Alt 2
     static void writeCSV(){
