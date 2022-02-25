@@ -2,6 +2,20 @@ package simpleGUI.base;
 
 public class Window {
 
+    enum ScrollbarDirection {
+        VERTICAL,
+        HORIZONTAL
+    }
+    enum ScrollbarLocation {
+        LEFT,
+        RIGHT,
+        TOP,
+        BOTTOM
+    }
+
+    ScrollbarDirection scrollbarDirection = ScrollbarDirection.VERTICAL;
+    ScrollbarLocation scrollbarLocation = ScrollbarLocation.RIGHT;
+
     public Window() {
         /*
         * Constructing an empty window without a Frame.
@@ -70,16 +84,20 @@ public class Window {
          * Set the place of the scrollbar on the window (left, right, top or bottom).
          */
     }
-    public void setScrollbarDirection(String direction) {
+    public ScrollbarDirectionHandler setScrollbarDirection() {
         /*
-         * Set the direction of an existing scrollbar (horizontal og vertically).
+         * Set the direction of an existing scrollbar by returning a ScrollbarDirectionHandler() that has the
+         * methods horizontal() and vertical().
          *
          */
+        return new ScrollbarDirectionHandler(this);
     }
-    public void placeScrollbar(String place){
+    public ScrollbarLocationHandler placeScrollbar(String place){
         /*
-         * Set the place of the scrollbar on the window (left, right, top, bottom).
+         * Set the location of an existing scrollbar by returning a ScrollbarLocationHandler(), that has the
+         * methods left(), right(), top() and bottom().
          */
+        return new ScrollbarLocationHandler(this);
     }
     public void addBreadCrumbs() {
         /*
