@@ -1,7 +1,6 @@
 package simpleGUI.base;
 
-class ScrollbarDirectionHandler {
- private Window owner;
+public class ScrollbarDirectionHandler { Window owner;
 
  public ScrollbarDirectionHandler(Window owner) {
   this.owner = owner;

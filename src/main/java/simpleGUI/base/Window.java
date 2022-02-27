@@ -92,7 +92,7 @@ public class Window {
          */
         return new ScrollbarDirectionHandler(this);
     }
-    public ScrollbarLocationHandler placeScrollbar(String place){
+    public ScrollbarLocationHandler placeScrollbar(){
         /*
          * Set the location of an existing scrollbar by returning a ScrollbarLocationHandler(), that has the
          * methods left(), right(), top() and bottom().
