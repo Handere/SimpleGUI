@@ -1,23 +1,24 @@
 package simpleGUI.base;
 
-public class ScrollbarDirectionHandler { Window owner;
+public class ScrollbarDirectionHandler {
+    Scrollbar scrollbar;
 
- public ScrollbarDirectionHandler(Window owner) {
-  this.owner = owner;
+ public ScrollbarDirectionHandler(Scrollbar scrollbar) {
+  this.scrollbar = scrollbar;
  }
 
  public void horizontal() {
-  /*
+  /**
    * Set the direction of the scrollbar to horizontal.
    */
-   owner.scrollbarDirection = Window.ScrollbarDirection.HORIZONTAL;
+   scrollbar.scrollbarDirection = Scrollbar.ScrollbarDirection.HORIZONTAL;
  }
 
  public void vertical() {
-  /*
+  /**
    * Set the direction of the scrollbar to vertical.
    */
-   owner.scrollbarDirection = Window.ScrollbarDirection.VERTICAL;
+   scrollbar.scrollbarDirection = Scrollbar.ScrollbarDirection.VERTICAL;
  }
 
 }

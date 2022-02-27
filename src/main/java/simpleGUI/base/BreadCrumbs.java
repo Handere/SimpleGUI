@@ -1,4 +1,4 @@
 package simpleGUI.base;
 
-public class Navigation {
+public class BreadCrumbs {
 }
