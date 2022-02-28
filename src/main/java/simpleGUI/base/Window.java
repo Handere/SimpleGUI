@@ -4,14 +4,27 @@ import java.util.ArrayList;
 
 public class Window {
 
+    int heightInPixels = 500;
+    int widthInPixels = 500;
+
     Scrollbar scrollbar;
     NavigationBar navigationBar;
     ArrayList<Frame> frames = new ArrayList<>();
 
     public Window() {
         /**
-        * Constructing an empty window without a Frame.
+        * Create an empty window without a Frame.
+         * Width and height is by default 500x500px.
          */
+    }
+
+    public Window(int heightInPixels, int widthInPixels) {
+        /**
+         * Create an empty window without a Frame.
+         * Set the specified width and height of the window.
+         */
+        this.heightInPixels = heightInPixels;
+        this.widthInPixels = widthInPixels;
     }
 
     public void setHeight(int height) {
@@ -31,22 +44,16 @@ public class Window {
     }
     public void build() {
         /**
-         * Add a Frame that fill the window.
+         * Build the components of the window, to make it visible as an application.
          */
-        if (!frames.isEmpty()) {
-            frames.add(new Frame(this, 0));
-            frames.add(new Frame(this, 1));
-            frames.add(new Frame(this, 2));
-            frames.add(new Frame(this, 3));
-        }
-        frames.get(0).showFrame = true;
     }
-    public void addFrame(){
+    public Frame addFrame(){
         /**
          * Adds a new frame to the window with the specified position (left, right, over, under)
          * This frame shares the space with the existing frame by splitting it in two
          * (Floating)
          */
+        return new Frame(this);
     }
     public FrameHandler frame() {
         /**
