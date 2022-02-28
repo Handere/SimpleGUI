@@ -232,6 +232,130 @@ public class allClientCode {
     breadcrum.addLink(moduleHolder1);
     breadcrum.place(moduleHolder2).top();
 
+    //Nytt scenario 2.7: Opprette et vindu og sett størrelse 600x700, med en ramme og legg til en teksboks med tittelen
+    //"Rammeverk" og teskt i boksen "Rammeverk gruppe 25, jobber som bare det!", og legg til en knapp som heter "Bra".
+    // og bygg vinduet med build-funksjonen.
+    //Alt 1
+    Window window = new Window(600, 700);
+    window.addFrame();
+    window.frame().frame0().addTextBox("Rammeverk", "Rammeverk gruppe 25, jobber som bare det!");
+    window.frame().frame0().addActionButton("Bra");
+    window.build();
+
+    //Alt 2
+    Window window = new Window();
+    window.setHeight(600);
+    window.setWidth(700);
+
+    window.addFrame();
+    TextBox textBox = window.frame().frame0().addTextBox("Rammeverk");
+    textBox.setContent("Rammeverk gruppe 25, jobber som bare det!");
+
+    window.frame().frame0().addActionButton("Bra");
+    window.build();
+
+    //Nytt scenario 2.8: Opprette to vindu, "window1" og "window2" med standard størrelse, og sett inn navigasjonsmeny
+    //til venstre med navigasjonsknapper mellom vinduene, samt en brødsmulesti.
+    //Legg til scrollbar og sett plasseringen til høyre med vertikal scroll.
+    //Bygg tilslutt hvert av vinduene.
+    //Alt 1
+    Window window1 = new Window();
+    Window window2 = new Window();
+
+    NavigationBar navigationBar1 = window1.addNavigationBar();
+    NavigationBar navigationBar2 = window2.addNavigationBar();
+    Scrollbar scrollbar1 = window1.addScrollbar();
+    Scrollbar scrollbar2 = window2.addScrollbar();
+
+    navigationBar1.placeNavigationBar().left();
+    navigationBar2.placeNavigationBar().left();
+
+    NavigationButton navigationButton1 = navigationBar1.addNavigationButton();
+    NavigationButton navigationButton2 = navigationBar1.addNavigationButton();
+
+    NavigationButton navigationButton3 = navigationBar2.addNavigationButton();
+    NavigationButton navigationButton4 = navigationBar2.addNavigationButton();
+
+    navigationButton1.setButtonName("Window1");
+    navigationButton1.setTargetWindow(window1);
+    navigationButton2.setButtonName("Window2");
+    navigationButton2.setTargetWindow(window2);
+    navigationButton3.setButtonName("Window1");
+    navigationButton3.setTargetWindow(window1);
+    navigationButton4.setButtonName("Window2");
+    navigationButton4.setTargetWindow(window2);
+
+    navigationBar1.addBreadCrumbs();
+    navigationBar2.addBreadCrumbs();
+
+    scrollbar1.placeScrollbar().right();
+    scrollbar2.placeScrollbar().right();
+    scrollbar1.setScrollbarDirection().vertical();
+    scrollbar2.setScrollbarDirection().vertical();
+
+    window1.build();
+    window2.build();
+
+    //Alt 2
+    Window window1 = new Window();
+    Window window2 = new Window();
+
+    window1.addNavigationBar().placeNavigationBar().left();
+    window2.addNavigationBar().placeNavigationBar().left();
+
+    window1.navigationBar().addNavigationButton(window1, "Window1");
+    window1.navigationBar().addNavigationButton(window2, "Window2");
+    window2.navigationBar().addNavigationButton(window1, "Window1");
+    window2.navigationBar().addNavigationButton(window2, "Window2");
+
+    window1.addNavigationBar().addBreadCrumbs();
+    window2.addNavigationBar().addBreadCrumbs();
+
+    window1.addScrollbar().setScrollbarDirection().vertical();
+    window2.addScrollbar().setScrollbarDirection().vertical();
+
+    window1.build();
+    window2.build();
+
+    //Nytt scenario 2.9: Opprett et vinu med standard størrelse og legg til tre frames, plasser frame 0 øverst til
+    // venstre, frame 1 øverst til høyre og frame 2 nederst. Legg til en label i hver frame med korresponderende tittel.
+    // Tilslutt bygg vinduet, med build-funksjonen.
+    //Alt 1
+    Window window = new Window();
+
+    Frame frame0 = window.addFrame();
+    Frame frame1 = window.addFrame();
+    Frame frame2 = window.addFrame();
+
+    frame0.placeFrame().topLeft();
+    frame1.placeFrame().topRight();
+    frame2.placeFrame().bottom();
+
+    Label label0 = frame0.addLabel();
+    Label label1 = frame1.addLabel();
+    Label label2 = frame2.addLabel();
+
+    label0.setTitle("Frame0");
+    label1.setTitle("Frame1");
+    label2.setTitle("Frame2");
+
+    window.build();
+
+    //Alt 2
+    Window window = new Window();
+
+    window.addFrame();
+    window.frame().frame0().placeFrame().topLeft();
+    window.addFrame();
+    window.frame().frame1().placeFrame().topRight();
+    window.addFrame();
+    window.frame().frame2().placeFrame().bottom();
+
+    window.frame().frame0().addLabel("Frame 0");
+    window.frame().frame1().addLabel("Frame 1");
+    window.frame().frame2().addLabel("Frame 2");
+
+    window.build();
 
     //Scenario 3.1: Opprette skjema-modul og sette tittel til "Form"
     //Alt 1
