@@ -31,9 +31,15 @@ public class NavigationBar {
          * Set the place of the Breadcrumb to the window in a specified frame.
          */
     }
+    public NavigationButton addNavigationButton() {
+        /**
+         * Add a navigation button to the navigation bar, without a specified target window and name.
+         */
+        return new NavigationButton();
+    }
     public NavigationButton addNavigationButton(Window targetWindow, String buttonName) {
         /**
-         * Add a navigation button to the navigation bar, with a specified target window.
+         * Add a navigation button to the navigation bar, with a specified target window and name.
          */
         return new NavigationButton(targetWindow, buttonName);
     }
@@ -45,11 +51,6 @@ public class NavigationBar {
     public void setNavigationButtonDestination(String buttonName, Window newTargetWindow) {
         /**
          * Change the target window of the specified button.
-         */
-    }
-    public void removeNavigationButton(String buttonName) {
-        /**
-         * Remove/delete the specified navigation button from the navigation bar.
          */
     }
 }

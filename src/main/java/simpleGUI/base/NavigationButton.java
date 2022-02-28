@@ -13,4 +13,12 @@ public class NavigationButton implements Button {
         this.targetWindow = targetWindow;
         this.buttonName = buttonName;
     }
+
+    public void setTargetWindow(Window targetWindow) {
+        this.targetWindow = targetWindow;
+    }
+
+    public void setButtonName(String buttonName) {
+        this.buttonName = buttonName;
+    }
 }
