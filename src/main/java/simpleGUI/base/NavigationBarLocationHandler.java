@@ -1,30 +1,47 @@
 package simpleGUI.base;
 
+/**
+ * Handle the location of a NavigationBar its attached window.
+ */
 public class NavigationBarLocationHandler {
+    /**
+     * The NavigationBar to handle.
+     */
     NavigationBar navigationBar;
 
+    /**
+     * Constructor.
+     * @param navigationBar The NavigationBar to handle.
+     */
     public NavigationBarLocationHandler(NavigationBar navigationBar) {
         this.navigationBar = navigationBar;
     }
 
+    /**
+     * Set the location of the navigation bar to the left of the window.
+     */
     public void left() {
-        /**
-         * Set the location of the navigation bar to the left.
-         */
+
     }
+
+    /**
+     * Set the location of the navigation bar to the right of the window.
+     */
     public void right() {
-        /**
-         * Set the location of the navigation bar to the right.
-         */
+
     }
+
+    /**
+     * Set the location of the navigation bar to the top of the window.
+     */
     public void top() {
-        /**
-         * Set the location of the navigation bar to the top.
-         */
+
     }
+
+    /**
+     * Set the location of the navigation bar to the bottom of the window.
+     */
     public void bottom() {
-        /**
-         * Set the location of the navigation bar to the bottom.
-         */
+
     }
 }

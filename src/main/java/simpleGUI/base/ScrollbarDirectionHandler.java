@@ -1,23 +1,33 @@
 package simpleGUI.base;
 
+/**
+ * Handle the scroll direction to a Scrollbar.
+ */
 public class ScrollbarDirectionHandler {
+    /**
+     * The Scrollbar to handle.
+     */
     Scrollbar scrollbar;
 
+    /**
+     * Constructor.
+     * @param scrollbar The Scrollbar to handle.
+     */
  public ScrollbarDirectionHandler(Scrollbar scrollbar) {
   this.scrollbar = scrollbar;
  }
 
+    /**
+     * Set the scrollbar direction to horizontal.
+     */
  public void horizontal() {
-  /**
-   * Set the direction of the scrollbar to horizontal.
-   */
    scrollbar.scrollbarDirection = Scrollbar.ScrollbarDirection.HORIZONTAL;
  }
 
+    /**
+     * Set the scrollbar direction to vertical.
+     */
  public void vertical() {
-  /**
-   * Set the direction of the scrollbar to vertical.
-   */
    scrollbar.scrollbarDirection = Scrollbar.ScrollbarDirection.VERTICAL;
  }
 

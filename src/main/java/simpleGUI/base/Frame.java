@@ -1,59 +1,90 @@
 package simpleGUI.base;
 
-import simpleGUI.scene.controls.Button;
-
+/**
+ * Hold the non-window-specific elements that can be displayed in the GUI.
+ */
 public class Frame {
+    /**
+     * Specify if the Frame shall be displayed.
+     */
     boolean showFrame = false;
+    /**
+     * The Window the Frame is attached to.
+     */
     Window owner;
+    /**
+     * The Frame ID.
+     */
     int id;
 
+    /**
+     * Constructor.
+     * @param owner The Window the Frame is attached to.
+     */
     public Frame(Window owner) {
         this.owner = owner;
     }
 
+    /**
+     * Constructor.
+     * @param owner The Window the Frame is attached to.
+     * @param id The id of the Frame.
+     */
     public Frame(Window owner, int id) {
         this.owner = owner;
         this.id = id;
     }
 
+    /**
+     * Return a FrameLocationHandler that can specify the location of the Frame on the window.
+     * @return new FrameLocationHandler
+     */
     public FrameLocationHandler placeFrame() {
-        /**
-         * Return a FrameLocationHandler with methods that specify the possible positions;
-         * .left(), .right(), .top() or .bottom().
-         */
         return new FrameLocationHandler(this);
     }
+
+    /**
+     * Add an ActionButton to the Frame.
+     * @param buttonName The name of the button. Will be displayed.
+     * @return new ActionButton
+     */
     public ActionButton addActionButton(String buttonName){
-        /**
-         * Add an action button to the frame, with the specified button name.
-         * Return the created button.
-         */
         return new ActionButton(this, buttonName);
     }
+
+    /**
+     * Add a Label to the Frame, without a title.
+     * @return new Label
+     */
     public Label addLabel(){
-        /**
-         * Add a label to the frame, without a title.
-         * Return the created label.
-         */
         return new Label(this);
     }
+
+    /**
+     * Add a Label to the Frame.
+     * @param title The title of the Label. Will be displayed.
+     * @return new Label
+     */
     public Label addLabel(String title){
-        /**
-         * Add a label to the frame, with the specified title.
-         * Return the created label.
-         */
         return new Label(this, title);
     }
+
+    /**
+     * Add a TextBox to the Frame.
+     * @param title The title of the TextBox. Will be displayed.
+     * @param content The content of the TextBox. Will be displayed.
+     * @return new TextBox
+     */
     public TextBox addTextBox(String title, String content) {
-        /**
-         * Add a Textbox to the frame, with a title and content in the textBox.
-         */
         return new TextBox(this, title, content);
     }
+
+    /**
+     * Add a TextBox to the Frame, without the content.
+     * @param title The title of the TextBox. Will be displayed.
+     * @return new TextBox
+     */
     public TextBox addTextBox(String title) {
-        /**
-         * Add a Textbox to the frame, with a title and no content in the textBox.
-         */
         return new TextBox(this, title);
     }
 }

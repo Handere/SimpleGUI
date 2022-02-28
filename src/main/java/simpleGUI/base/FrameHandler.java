@@ -1,34 +1,51 @@
 package simpleGUI.base;
 
+/**
+ * Handle the frames attached to a window.
+ */
 public class FrameHandler {
+    /**
+     * The Window to the attached frames to handle.
+     */
     Window owner;
 
+    /**
+     * Constructor.
+     * @param owner The Window to the attached frames to handle.
+     */
     public FrameHandler(Window owner) {
         this.owner = owner;
     }
 
+    /**
+     * Return the first Frame, if already added.
+     * @return Frame
+     */
     public Frame frame0() {
-        /**
-         * Return the first frame in the specified window.
-         */
         return owner.frames.get(0);
     }
+
+    /**
+     * Return the second Frame, if already added.
+     * @return Frame
+     */
     public Frame frame1() {
-        /**
-         * Return the second frame in the specified window.
-         */
         return owner.frames.get(0);
     }
+
+    /**
+     * Return the third Frame, if already added.
+     * @return Frame
+     */
     public Frame frame2() {
-        /**
-         * Return the third frame in the specified window.
-         */
         return owner.frames.get(0);
     }
+
+    /**
+     * Return the fourth Frame, if already added.
+     * @return Frame
+     */
     public Frame frame3() {
-        /**
-         * Return the fourth frame in the specified window.
-         */
         return owner.frames.get(0);
     }
 }
