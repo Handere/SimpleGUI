@@ -22,9 +22,29 @@ public class FrameLocationHandler {
          * Set the location of the frame to the top.
          */
     }
+    public void topLeft() {
+        /**
+         * Set the location of the frame to the top left.
+         */
+    }
+    public void topRight() {
+        /**
+         * Set the location of the frame to the top right.
+         */
+    }
     public void bottom() {
         /**
          * Set the location of the frame to the bottom.
+         */
+    }
+    public void bottomLeft() {
+        /**
+         * Set the location of the frame to the bottom left.
+         */
+    }
+    public void bottomRight() {
+        /**
+         * Set the location of the frame to the bottom right.
          */
     }
 }
