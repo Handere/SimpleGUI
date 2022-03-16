@@ -1,4 +1,4 @@
-package simpleGUI.base;
+package simpleGUI;
 
 /**
  * Label that can be attached and displayed on a Frame.

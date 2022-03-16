@@ -1,4 +1,4 @@
-package simpleGUI.base;
+package simpleGUI;
 
 /**
  * Handle the scroll direction to a Scrollbar.

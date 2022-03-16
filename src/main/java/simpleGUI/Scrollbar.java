@@ -1,4 +1,4 @@
-package simpleGUI.base;
+package simpleGUI;
 
 /**
  * Scrollbar that can be attached to a window.

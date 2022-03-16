@@ -1,4 +1,4 @@
-package simpleGUI.base;
+package simpleGUI;
 
 /**
  * Bread crumbs that can be attached to a NavigationBar.

@@ -1,4 +1,4 @@
-package simpleGUI.base;
+package simpleGUI;
 
 /**
  * Handle the location of a Frame on the attached window.

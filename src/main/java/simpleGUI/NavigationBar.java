@@ -1,4 +1,4 @@
-package simpleGUI.base;
+package simpleGUI;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package simpleGUI.base;
+package simpleGUI;
 
 /**
  * Hold the non-window-specific elements that can be displayed in the GUI.
