@@ -2,6 +2,9 @@ package simpleGUI.handlers;
 
 import simpleGUI.Scrollbar;
 
+/**
+ * Scrollbar handler.
+ */
 public class ScrollbarHandler {
     /**
      * The Scrollbar to handle.
