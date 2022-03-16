@@ -1,4 +1,6 @@
-package simpleGUI;
+package simpleGUI.handlers;
+
+import simpleGUI.Scrollbar;
 
 public class ScrollbarHandler {
     /**

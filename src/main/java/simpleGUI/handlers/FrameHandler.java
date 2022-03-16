@@ -1,4 +1,6 @@
-package simpleGUI;
+package simpleGUI.handlers;
+
+import simpleGUI.Frame;
 
 /**
  * Handle the frames attached to a window.

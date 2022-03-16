@@ -1,5 +1,7 @@
 package simpleGUI;
 
+import simpleGUI.handlers.ScrollbarHandler;
+
 /**
  * Scrollbar that can be attached to a window.
  */
@@ -12,16 +14,16 @@ public class Scrollbar {
     /**
      * The default scrollbar direction.
      */
-    ScrollbarDirection scrollbarDirection = ScrollbarDirection.VERTICAL;
+    public ScrollbarDirection scrollbarDirection = ScrollbarDirection.VERTICAL;
     /**
      * The default scrollbar location.
      */
-    ScrollbarLocation scrollbarLocation = ScrollbarLocation.RIGHT;
+    public ScrollbarLocation scrollbarLocation = ScrollbarLocation.RIGHT;
 
     /**
      * The possible scroll directions of the Scrollbar.
      */
-    enum ScrollbarDirection {
+    public enum ScrollbarDirection {
         /**
          * Specify the scrollbar direction to be vertical.
          */
@@ -35,7 +37,7 @@ public class Scrollbar {
     /**
      * The possible locations of the Scrollbar on a window.
      */
-    enum ScrollbarLocation {
+    public enum ScrollbarLocation {
         /**
          * Specify the scrollbar location to the left.
          */

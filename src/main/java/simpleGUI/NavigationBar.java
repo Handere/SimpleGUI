@@ -1,5 +1,7 @@
 package simpleGUI;
 
+import simpleGUI.handlers.NavigationBarHandler;
+
 import java.util.ArrayList;
 
 /**

@@ -1,4 +1,6 @@
-package simpleGUI;
+package simpleGUI.handlers;
+
+import simpleGUI.NavigationBar;
 
 /**
  * Handle the location of a NavigationBar its attached window.

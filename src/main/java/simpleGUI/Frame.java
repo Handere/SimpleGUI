@@ -1,5 +1,7 @@
 package simpleGUI;
 
+import simpleGUI.handlers.FrameHandler;
+
 /**
  * Hold the non-window-specific elements that can be displayed in the GUI.
  */
