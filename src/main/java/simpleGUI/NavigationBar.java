@@ -28,11 +28,11 @@ public class NavigationBar {
     }
 
     /**
-     * Return a NavigationBarLocationHandler with methods that specify the possible positions.
-     * @return new NavigationBarLocationHandler
+     * Return a NavigationBarHandler with methods that specify the possible positions.
+     * @return new NavigationBarHandler
      */
-    public NavigationBarLocationHandler placeNavigationBar() {
-        return new NavigationBarLocationHandler(this);
+    public NavigationBarHandler placeNavigationBar() {
+        return new NavigationBarHandler(this);
     }
 
     /**

@@ -3,7 +3,7 @@ package simpleGUI;
 /**
  * Handle the location of a NavigationBar its attached window.
  */
-public class NavigationBarLocationHandler {
+public class NavigationBarHandler {
     /**
      * The NavigationBar to handle.
      */
@@ -13,7 +13,7 @@ public class NavigationBarLocationHandler {
      * Constructor.
      * @param navigationBar The NavigationBar to handle.
      */
-    public NavigationBarLocationHandler(NavigationBar navigationBar) {
+    public NavigationBarHandler(NavigationBar navigationBar) {
         this.navigationBar = navigationBar;
     }
 

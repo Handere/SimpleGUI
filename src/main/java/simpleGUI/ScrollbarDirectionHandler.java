@@ -20,15 +20,15 @@ public class ScrollbarDirectionHandler {
     /**
      * Set the scrollbar direction to horizontal.
      */
- public void horizontal() {
-   scrollbar.scrollbarDirection = Scrollbar.ScrollbarDirection.HORIZONTAL;
- }
+    public void horizontal() {
+    scrollbar.scrollbarDirection = Scrollbar.ScrollbarDirection.HORIZONTAL;
+    }
 
     /**
      * Set the scrollbar direction to vertical.
      */
- public void vertical() {
-   scrollbar.scrollbarDirection = Scrollbar.ScrollbarDirection.VERTICAL;
- }
+    public void vertical() {
+    scrollbar.scrollbarDirection = Scrollbar.ScrollbarDirection.VERTICAL;
+    }
 
 }

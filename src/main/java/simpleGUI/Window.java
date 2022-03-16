@@ -19,17 +19,18 @@ public class Window {
     /**
      * The attached Scrollbar, if added.
      */
-    Scrollbar scrollbar;
+    private Scrollbar scrollbar;
     /**
      * The attached NavigationBar, if added.
      */
-    NavigationBar navigationBar;
+    private NavigationBar navigationBar;
     /**
      * The attached Frames, if added.
      */
-    ArrayList<Frame> frames = new ArrayList<>();
+    protected ArrayList<Frame> frames = new ArrayList<>();
 
     /**
+     * Constructor.
      * Create an empty window without a Frame.
      * Width and height is by default 500x500px.
      */
@@ -38,6 +39,7 @@ public class Window {
     }
 
     /**
+     * Constructor.
      * Create an empty window without a Frame.
      * @param heightInPixels Set the height of the window in pixels.
      * @param widthInPixels Set the width of the window in pixels.

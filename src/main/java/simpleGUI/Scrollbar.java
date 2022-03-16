@@ -63,19 +63,19 @@ public class Scrollbar {
     }
 
     /**
-     * Return a ScrollbarDirectionHandler that can specify the scrolling direction to the Scrollbar.
-     * @return new ScrollbarDirectionHandler
+     * Return a ScrollbarHandler that can specify the scrolling direction to the Scrollbar.
+     * @return new ScrollbarHandler
      */
-    public ScrollbarDirectionHandler setScrollbarDirection() {
-        return new ScrollbarDirectionHandler(this);
+    public ScrollbarHandler setScrollbarDirection() {
+        return new ScrollbarHandler(this);
     }
 
     /**
-     * Return a ScrollbarLocationHandler that can specify the location of the Scrollbar on the window.
-     * @return new ScrollbarLocationHandler
+     * Return a ScrollbarHandler that can specify the location of the Scrollbar on the window.
+     * @return new ScrollbarHandler
      */
-    public ScrollbarLocationHandler placeScrollbar(){
-        return new ScrollbarLocationHandler(this);
+    public ScrollbarHandler placeScrollbar(){
+        return new ScrollbarHandler(this);
     }
 
 }
