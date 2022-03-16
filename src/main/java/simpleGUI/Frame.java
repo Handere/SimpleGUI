@@ -36,11 +36,11 @@ public class Frame {
     }
 
     /**
-     * Return a FrameLocationHandler that can specify the location of the Frame on the window.
-     * @return new FrameLocationHandler
+     * Return a FrameHandler that can specify the location of the Frame on the window.
+     * @return new FrameHandler
      */
-    public FrameLocationHandler placeFrame() {
-        return new FrameLocationHandler(this);
+    public FrameHandler placeFrame() {
+        return new FrameHandler(this);
     }
 
     /**

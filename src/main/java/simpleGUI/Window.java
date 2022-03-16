@@ -93,14 +93,6 @@ public class Window {
     }
 
     /**
-     * Return a FrameHandler that give access to the frames connected to the window.
-     * @return FrameHandler
-     */
-    public FrameHandler frame() {
-        return new FrameHandler(this);
-    }
-
-    /**
      * Add a scrollbar that by default is placed on the right of the window, with vertical scrolling.
      * @return new Scrollbar
      */

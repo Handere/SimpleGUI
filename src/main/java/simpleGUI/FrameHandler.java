@@ -4,48 +4,73 @@ package simpleGUI;
  * Handle the frames attached to a window.
  */
 public class FrameHandler {
+
     /**
-     * The Window to the attached frames to handle.
+     * The Frame to handle.
      */
-    Window owner;
+    Frame frame;
 
     /**
      * Constructor.
-     * @param owner The Window to the attached frames to handle.
+     * @param frame The Window to the attached frames to handle.
      */
-    public FrameHandler(Window owner) {
-        this.owner = owner;
+    public FrameHandler(Frame frame) {
+        this.frame = frame;
     }
 
     /**
-     * Return the first Frame, if already added.
-     * @return Frame
+     * Set the location of the Frame to the left on the window.
      */
-    public Frame frame0() {
-        return owner.frames.get(0);
+    public void left() {
+
     }
 
     /**
-     * Return the second Frame, if already added.
-     * @return Frame
+     * Set the location of the Frame to the right on the window.
      */
-    public Frame frame1() {
-        return owner.frames.get(0);
+    public void right() {
+
     }
 
     /**
-     * Return the third Frame, if already added.
-     * @return Frame
+     * Set the location of the Frame to the top on the window.
      */
-    public Frame frame2() {
-        return owner.frames.get(0);
+    public void top() {
+
     }
 
     /**
-     * Return the fourth Frame, if already added.
-     * @return Frame
+     * Set the location of the Frame to the top left on the window.
      */
-    public Frame frame3() {
-        return owner.frames.get(0);
+    public void topLeft() {
+
+    }
+
+    /**
+     * Set the location of the Frame to the top right on the window.
+     */
+    public void topRight() {
+
+    }
+
+    /**
+     * Set the location of the Frame to the bottom on the window.
+     */
+    public void bottom() {
+
+    }
+
+    /**
+     * Set the location of the Frame to the bottom left on the window.
+     */
+    public void bottomLeft() {
+
+    }
+
+    /**
+     * Set the location of the Frame to the bottom right on the window.
+     */
+    public void bottomRight() {
+
     }
 }
