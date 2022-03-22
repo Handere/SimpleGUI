@@ -64,6 +64,13 @@ public class MusicPlayer {
     }
 
     /**
+     * @return The Frame that hold the MusicPlayer.
+     */
+    public Frame getOwner() {
+        return owner;
+    }
+
+    /**
      * Connect the MusicPlayer to a Frame owner, making it display in the Frame.
      * @param owner The Frame that hold the MusicPlayer.
      */
