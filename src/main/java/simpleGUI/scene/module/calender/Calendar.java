@@ -24,7 +24,7 @@ public class Calendar {
     /**
      * HashMap that hold all calendar events, where the key is datetime: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
      */
-    HashMap<String, CalenderEvent> calenderEvents;
+    HashMap<String, CalendarEvent> calenderEvents;
 
     /**
      * Constructor.
@@ -58,16 +58,16 @@ public class Calendar {
 
     /**
      * Add a CalenderEvent to the calendar, on a given datetime in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
-     * @param calenderEvent The CalendarEvent to be added.
+     * @param calendarEvent The CalendarEvent to be added.
      */
-    public void addCalendarEvent(CalenderEvent calenderEvent) {
+    public void addCalendarEvent(CalendarEvent calendarEvent) {
     }
 
     /**
      * Remove a CalendarEvent from the calendar.
-     * @param calenderEvent The CalendarEvent to be removed.
+     * @param calendarEvent The CalendarEvent to be removed.
      */
-    public void removeCalendarEvent(CalenderEvent calenderEvent) {
+    public void removeCalendarEvent(CalendarEvent calendarEvent) {
     }
 
     /**
