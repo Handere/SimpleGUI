@@ -75,8 +75,17 @@ public class Scrollbar {
     public Scrollbar(Window owner) {
         this.owner = owner;
 
-        scrollbar = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        owner.window.getContentPane().add(scrollbar, BorderLayout.WEST);
+
+        JScrollBar verticalScrollBar = new JScrollBar(JScrollBar.VERTICAL, 30, 20, 0, 500);
+        JScrollBar horizontalScrollBar = new JScrollBar(JScrollBar.HORIZONTAL, 30, 40, 0, 500);
+
+        owner.window.setLayout(new BorderLayout());
+        owner.window.getContentPane().add(verticalScrollBar, BorderLayout.EAST);
+        owner.window.getContentPane().add(horizontalScrollBar, BorderLayout.SOUTH);
+
+        owner.window.setContentPane(scrollbar);
+        /*scrollbar = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        owner.window.getContentPane().add(scrollbar, BorderLayout.WEST);*/
 
     }
 

@@ -31,10 +31,17 @@ public class Frame {
     public Frame(Window owner) {
         this.owner = owner;
         frame = new JPanel(new BorderLayout());
+        JButton button = new JButton("Hello");
+        frame.add(button, BorderLayout.NORTH);
 
-        //frame.setBounds(40, 80, 10, 50);
-        frame.setBackground(Color.MAGENTA);
+        //JPanel panel = new JPanel();
+        //panel.setBounds(40,80,200,200);
+        //panel.setBackground(Color.BLACK);
+        frame.setBounds(40, 80, 10, 50);
+        owner.window.getContentPane().setBackground(Color.BLACK);
         owner.window.add(frame);
+
+
     }
 
     /**
