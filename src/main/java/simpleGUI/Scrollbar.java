@@ -1,6 +1,6 @@
 package simpleGUI;
 
-import java.awt.FlowLayout;
+import java.awt.*;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -74,8 +74,10 @@ public class Scrollbar {
      */
     public Scrollbar(Window owner) {
         this.owner = owner;
+
         scrollbar = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        owner.window.setContentPane(scrollbar);
+        owner.window.getContentPane().add(scrollbar, BorderLayout.WEST);
+
     }
 
 

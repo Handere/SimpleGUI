@@ -2,39 +2,39 @@ package simpleGUI;
 
 import simpleGUI.handlers.FrameHandler;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * Hold the non-window-specific elements that can be displayed in the GUI.
  */
 public class Frame {
-    /**
-     * Specify if the Frame shall be displayed.
-     */
-    boolean showFrame = false;
+
     /**
      * The Window the Frame is attached to.
      */
     Window owner;
     /**
-     * The Frame ID.
+     * The frame.
      */
-    int id;
+    JPanel frame;
+    /**
+     * Specify if the Frame shall be displayed.
+     */
+    boolean showFrame = false;
 
     /**
      * Constructor.
+     * Create a Frame with border layout as default.
      * @param owner The Window the Frame is attached to.
      */
     public Frame(Window owner) {
         this.owner = owner;
-    }
+        frame = new JPanel(new BorderLayout());
 
-    /**
-     * Constructor.
-     * @param owner The Window the Frame is attached to.
-     * @param id The id of the Frame.
-     */
-    public Frame(Window owner, int id) {
-        this.owner = owner;
-        this.id = id;
+        //frame.setBounds(40, 80, 10, 50);
+        frame.setBackground(Color.MAGENTA);
+        owner.window.add(frame);
     }
 
     /**
