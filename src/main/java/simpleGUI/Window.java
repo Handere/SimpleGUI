@@ -15,6 +15,11 @@ public class Window {
     JFrame window;
 
     /**
+     * The window title.
+     */
+    String title = "SimpleGUI";
+
+    /**
      * The default height of the window, in pixels.
      */
     private int heightInPixels = 500;
@@ -42,7 +47,36 @@ public class Window {
      * Width and height is by default 500x500px.
      */
     public Window() {
-        this.window = new JFrame();
+        this.window = new JFrame(title);
+        window.setSize(widthInPixels, heightInPixels);
+        window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
+    }
+
+    /**
+     * Constructor.
+     * Create an empty window without a Frame.
+     * Width and height is by default 500x500px.
+     */
+    public Window(String title) {
+        this.window = new JFrame(title);
+        this.title = title;
+        window.setSize(widthInPixels, heightInPixels);
+        window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
+    }
+
+    /**
+     * Constructor.
+     * Create an empty window without a Frame.
+     * @param title Set the title of the window.
+     * @param heightInPixels Set the height of the window in pixels.
+     * @param widthInPixels Set the width of the window in pixels.
+     *
+     */
+    public Window(String title, int heightInPixels, int widthInPixels) {
+        this.window = new JFrame(title);
+        this.heightInPixels = heightInPixels;
+        this.widthInPixels = widthInPixels;
+        this.title = title;
         window.setSize(widthInPixels, heightInPixels);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
     }
@@ -55,7 +89,7 @@ public class Window {
      *
      */
     public Window(int heightInPixels, int widthInPixels) {
-        this.window = new JFrame();
+        this.window = new JFrame(title);
         this.heightInPixels = heightInPixels;
         this.widthInPixels = widthInPixels;
         window.setSize(widthInPixels, heightInPixels);
