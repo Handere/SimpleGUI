@@ -1,5 +1,7 @@
 package simpleGUI;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -8,13 +10,18 @@ import java.util.ArrayList;
 public class Window {
 
     /**
+     * The window.
+     */
+    JFrame window;
+
+    /**
      * The default height of the window, in pixels.
      */
-    int heightInPixels = 500;
+    private int heightInPixels = 500;
     /**
      * The default width of the window, in pixels.
      */
-    int widthInPixels = 500;
+    private int widthInPixels = 500;
 
     /**
      * The attached Scrollbar, if added.
@@ -35,7 +42,9 @@ public class Window {
      * Width and height is by default 500x500px.
      */
     public Window() {
-
+        this.window = new JFrame();
+        window.setSize(widthInPixels, heightInPixels);
+        window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
     }
 
     /**
@@ -46,8 +55,11 @@ public class Window {
      *
      */
     public Window(int heightInPixels, int widthInPixels) {
+        this.window = new JFrame();
         this.heightInPixels = heightInPixels;
         this.widthInPixels = widthInPixels;
+        window.setSize(widthInPixels, heightInPixels);
+        window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
     }
 
     /**
@@ -55,7 +67,8 @@ public class Window {
      * @param heightInPixels Set the height of the window in pixels.
      */
     public void setHeight(int heightInPixels) {
-
+        this.heightInPixels = heightInPixels;
+        window.setSize(widthInPixels, heightInPixels);
     }
 
     /**
@@ -63,7 +76,8 @@ public class Window {
      * @param widthInPixels Set the width of the window in pixels.
      */
     public void setWidth(int widthInPixels){
-
+        this.widthInPixels = widthInPixels;
+        window.setSize(widthInPixels, heightInPixels);
     }
 
     /**
@@ -72,14 +86,16 @@ public class Window {
      * @param heightInPixels Set the height of the window in pixels.
      */
     public void setSize(int widthInPixels, int heightInPixels){
-
+        this.widthInPixels = widthInPixels;
+        this.heightInPixels = heightInPixels;
+        window.setSize(widthInPixels, heightInPixels);
     }
 
     /**
      * Build the components of the window, making it visible as an application.
      */
     public void build() {
-
+        window.setVisible(true);
     }
 
     /**
@@ -98,6 +114,16 @@ public class Window {
      */
     public Scrollbar addScrollbar() {
         return scrollbar = new Scrollbar(this);
+    }
+
+    /**
+     * Add a scrollbar that by default is placed on the right of the window, with vertical scrolling.
+     * @param alwaysShowVertical Set the vertical scrollbar to always visible if true, and if needed when false.
+     * @param alwaysShowHorizontal Set the horizontal scrollbar to always visible if true, and if needed when false.
+     * @return new Scrollbar
+     */
+    public Scrollbar addScrollbar(boolean alwaysShowVertical, boolean alwaysShowHorizontal) {
+        return scrollbar = new Scrollbar(this, alwaysShowVertical, alwaysShowHorizontal);
     }
 
     /**

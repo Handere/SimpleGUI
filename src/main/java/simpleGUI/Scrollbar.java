@@ -1,11 +1,23 @@
 package simpleGUI;
 
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import simpleGUI.handlers.ScrollbarHandler;
+import javax.swing.*;
 
 /**
  * Scrollbar that can be attached to a window.
  */
 public class Scrollbar {
+
+    /**
+     * The scrollbar.
+     */
+    JScrollPane scrollbar;
     /**
      * The window the Scrollbar is attached to.
      */
@@ -62,6 +74,34 @@ public class Scrollbar {
      */
     public Scrollbar(Window owner) {
         this.owner = owner;
+        scrollbar = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        owner.window.setContentPane(scrollbar);
+    }
+
+
+    /**
+     * Constructor.
+     * @param owner The window the Scrollbar is attached to.
+     * @param alwaysShowVertical Set the vertical scrollbar to always visible if true, and if needed when false.
+     * @param alwaysShowHorizontal Set the horizontal scrollbar to always visible if true, and if needed when false.
+     */
+    public Scrollbar(Window owner, boolean alwaysShowVertical, boolean alwaysShowHorizontal) {
+        this.owner = owner;
+
+        if (alwaysShowVertical && alwaysShowHorizontal) {
+            scrollbar = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        }
+        else if (alwaysShowVertical && !alwaysShowHorizontal) {
+            scrollbar = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        }
+        else if (!alwaysShowVertical && alwaysShowHorizontal) {
+            scrollbar = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        }
+        else if (!alwaysShowVertical && !alwaysShowHorizontal) {
+            scrollbar = new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        }
+
+        owner.window.setContentPane(scrollbar);
     }
 
     /**

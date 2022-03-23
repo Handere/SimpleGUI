@@ -9,6 +9,8 @@ public class Main {
      */
     public static void main(String[] args) {
         Window window = new Window();
-        window.addScrollbar();
+        window.setSize(300, 600);
+        window.addScrollbar(false, true);
+        window.build();
     }
 }
