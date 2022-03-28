@@ -15,7 +15,12 @@ public class Main {
     public static void main(String[] args) {
         Window window = new Window();
         window.addFrame();
-        window.addScrollbar1();
+        window.getFrame().addActionButton("hello");
+
+        window.getFrame().addLabel().setSize(2,2,20,20);
+        window.getFrame().addTextBox();
+
+        //window.addScrollbar1();
         //window.addScrollbar(true, true);
         window.build();
        /* Window window = new Window();

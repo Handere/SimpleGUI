@@ -17,7 +17,7 @@ public class Frame {
     /**
      * The frame.
      */
-    JPanel frame;
+    Container frame;
     /**
      * Specify if the Frame shall be displayed.
      */
@@ -30,26 +30,15 @@ public class Frame {
      */
     public Frame(Window owner) {
         this.owner = owner;
-        frame = new JPanel(new BorderLayout());
-        JButton button = new JButton("Hello");
-        frame.add(button, BorderLayout.NORTH);
-
-        //JPanel panel = new JPanel();
-        //panel.setBounds(40,80,200,200);
-        //panel.setBackground(Color.BLACK);
-        frame.setBounds(40, 80, 10, 50);
-        owner.window.getContentPane().setBackground(Color.BLACK);
-        owner.window.add(frame);
-
-
+        frame = owner.window.getContentPane();
     }
 
     /**
-     * Return a FrameHandler that can specify the location of the Frame on the window.
-     * @return new FrameHandler
+     * Add an ActionButton to the Frame, with a default name.
+     * @return new ActionButton
      */
-    public FrameHandler placeFrame() {
-        return new FrameHandler(this);
+    public ActionButton addActionButton(){
+        return new ActionButton(this);
     }
 
     /**
@@ -62,6 +51,17 @@ public class Frame {
     }
 
     /**
+     * Add an ActionButton to the Frame.
+     * @param buttonName The name of the button. Will be displayed.
+     * @param width The button width.
+     * @param height The button height.
+     * @return new ActionButton
+     */
+    public ActionButton addActionButton(String buttonName, int width, int height){
+        return new ActionButton(this, buttonName, width, height);
+    }
+
+    /**
      * Add a Label to the Frame, without a title.
      * @return new Label
      */
@@ -71,29 +71,29 @@ public class Frame {
 
     /**
      * Add a Label to the Frame.
-     * @param title The title of the Label. Will be displayed.
+     * @param singleLineText The title of the Label. Will be displayed.
      * @return new Label
      */
-    public Label addLabel(String title){
-        return new Label(this, title);
+    public Label addLabel(String singleLineText){
+
+        return new Label(this, singleLineText);
     }
 
     /**
      * Add a TextBox to the Frame.
-     * @param title The title of the TextBox. Will be displayed.
-     * @param content The content of the TextBox. Will be displayed.
      * @return new TextBox
      */
-    public TextBox addTextBox(String title, String content) {
-        return new TextBox(this, title, content);
+    public TextBox addTextBox() {
+        return new TextBox(this);
     }
 
     /**
-     * Add a TextBox to the Frame, without the content.
-     * @param title The title of the TextBox. Will be displayed.
+     * Add a TextBox to the Frame.
+     * @param content The content of the TextBox. Will be displayed.
      * @return new TextBox
      */
-    public TextBox addTextBox(String title) {
-        return new TextBox(this, title);
+    public TextBox addTextBox(String content) {
+        return new TextBox(this, content);
     }
+
 }

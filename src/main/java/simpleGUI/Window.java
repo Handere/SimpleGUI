@@ -39,7 +39,7 @@ public class Window {
     /**
      * The attached Frames, if added.
      */
-    protected ArrayList<Frame> frames = new ArrayList<>();
+    protected Frame frame;
 
     /**
      * Constructor.
@@ -139,7 +139,14 @@ public class Window {
      * @return new Frame
      */
     public Frame addFrame(){
-        return new Frame(this);
+        return frame = new Frame(this);
+    }
+
+    /**
+     * @return The Frame attached to the Window.
+     */
+    public Frame getFrame() {
+        return frame;
     }
 
     /**

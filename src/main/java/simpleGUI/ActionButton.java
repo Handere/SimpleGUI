@@ -22,6 +22,23 @@ public class ActionButton implements Button {
     JButton button;
 
     /**
+     * The width of the button.
+     */
+    int width = 100;
+    /**
+     * The height of the button.
+     */
+    int height = 50;
+    /**
+     * X-coordinate for top left corner.
+     */
+    int x;
+    /**
+     * Y-coordinate for top left corner.
+     */
+    int y;
+
+    /**
      * Constructor.
      * Create an ActionButton with default name.
      * @param owner The Frame the button is attached to.
@@ -29,6 +46,9 @@ public class ActionButton implements Button {
     public ActionButton(Frame owner) {
         this.owner = owner;
         this.button = new JButton(buttonName);
+        this.x = button.getX();
+        this.y = button.getY();
+        button.setBounds(x, y, width, height);
         owner.frame.add(button);
     }
 
@@ -41,6 +61,28 @@ public class ActionButton implements Button {
         this.buttonName = buttonName;
         this.owner = owner;
         this.button = new JButton(buttonName);
+        this.x = button.getX();
+        this.y = button.getY();
+        button.setBounds(x, y, width, height);
+        owner.frame.add(button);
+    }
+
+    /**
+     * Constructor.
+     * @param owner The Frame the button is attached to.
+     * @param buttonName The name of the button. Will be displayed.
+     * @param width The button width.
+     * @param height The button height.
+     */
+    public ActionButton(Frame owner, String buttonName, int width, int height) {
+        this.buttonName = buttonName;
+        this.owner = owner;
+        this.width = width;
+        this.height = height;
+        this.button = new JButton(buttonName);
+        this.x = button.getX();
+        this.y = button.getY();
+        button.setBounds(x, y, width, height);
         owner.frame.add(button);
     }
 
@@ -51,5 +93,21 @@ public class ActionButton implements Button {
     public void setButtonName(String buttonName) {
         this.buttonName = buttonName;
         button.setName(buttonName);
+    }
+
+    /**
+     * @param width The button width.
+     */
+    public void setWidth(int width) {
+        this.width = width;
+        button.setBounds(x, y, width, height);
+    }
+
+    /**
+     * @param height The button height.
+     */
+    public void setHeight(int height) {
+        this.height = height;
+        button.setBounds(x, y, width, height);
     }
 }
