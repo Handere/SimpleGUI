@@ -56,6 +56,7 @@ public class Window {
      * Constructor.
      * Create an empty window without a Frame.
      * Width and height is by default 500x500px.
+     * @param title The window title.
      */
     public Window(String title) {
         this.window = new JFrame(title);
@@ -189,17 +190,5 @@ public class Window {
      */
     public NavigationBar navigationBar(){
         return navigationBar;
-    }
-
-    public void addScrollbar1() {
-        window.getContentPane().setLayout(new FlowLayout());
-        JPanel panel = new JPanel();
-        panel.setBounds(50,50,300,300);
-        panel.setSize(150, 300);
-        panel.setBackground(Color.red);
-        JScrollPane scrollPane = new JScrollPane(panel);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        window.getContentPane().add(scrollPane);
     }
 }

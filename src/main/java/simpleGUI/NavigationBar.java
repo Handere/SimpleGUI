@@ -1,7 +1,6 @@
 package simpleGUI;
 
-import simpleGUI.handlers.NavigationBarHandler;
-
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -9,9 +8,13 @@ import java.util.ArrayList;
  */
 public class NavigationBar {
     /**
-     * The window the NavigationBar is attached to.
+     * The Window the NavigationBar is attached to.
      */
     Window owner;
+    /**
+     * The navigation bar.
+     */
+    JMenuBar navigationBar;
     /**
      * The attached BreadCrumbs.
      */
@@ -23,18 +26,12 @@ public class NavigationBar {
 
     /**
      * Constructor.
-     * @param owner The window the NavigationBar is attached to.
+     * @param owner The Frame the NavigationBar is attached to.
      */
     public NavigationBar(Window owner) {
         this.owner = owner;
-    }
-
-    /**
-     * Return a NavigationBarHandler with methods that specify the possible positions.
-     * @return new NavigationBarHandler
-     */
-    public NavigationBarHandler placeNavigationBar() {
-        return new NavigationBarHandler(this);
+        navigationBar = new JMenuBar();
+        owner.window.setJMenuBar(navigationBar);
     }
 
     /**
@@ -50,34 +47,16 @@ public class NavigationBar {
      * @return new NavigationButton
      */
     public NavigationButton addNavigationButton() {
-        return new NavigationButton();
+        return new NavigationButton(this);
     }
 
     /**
      * Add a NavigationButton to the NavigationBar.
-     * @param targetWindow The window the button will navigate to when clicked.
      * @param buttonName The name of the button. Will be displayed.
      * @return new NavigationButton
      */
-    public NavigationButton addNavigationButton(Window targetWindow, String buttonName) {
-        return new NavigationButton(targetWindow, buttonName);
+    public NavigationButton addNavigationButton(String buttonName) {
+        return new NavigationButton(this, buttonName);
     }
 
-    /**
-     * Set the name of the NavigationButton.
-     * @param oldButtonName The old name of the NavigationButton.
-     * @param newButtonName The new name of the NavigationButton.
-     */
-    public void setNavigationButtonName(String oldButtonName, String newButtonName) {
-
-    }
-
-    /**
-     * Set the target window of the button, to a new window.
-     * @param buttonName The name of the button.
-     * @param newTargetWindow The new target window of the button.
-     */
-    public void setNavigationButtonTarget(String buttonName, Window newTargetWindow) {
-
-    }
 }

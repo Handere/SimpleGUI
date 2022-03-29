@@ -19,9 +19,9 @@ public class Frame {
      */
     Container frame;
     /**
-     * Specify if the Frame shall be displayed.
+     * The navigation bar, if added.
      */
-    boolean showFrame = false;
+    NavigationBar navigationBar;
 
     /**
      * Constructor.
@@ -31,6 +31,7 @@ public class Frame {
     public Frame(Window owner) {
         this.owner = owner;
         frame = owner.window.getContentPane();
+        frame.setLayout(new BoxLayout(frame, BoxLayout.PAGE_AXIS));
     }
 
     /**
@@ -95,5 +96,6 @@ public class Frame {
     public TextBox addTextBox(String content) {
         return new TextBox(this, content);
     }
+
 
 }

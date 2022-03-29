@@ -110,4 +110,19 @@ public class ActionButton implements Button {
         this.height = height;
         button.setBounds(x, y, width, height);
     }
+
+    /**
+     * Set the size of the ActionButton.
+     * @param x X-coordinate for top left corner.
+     * @param y Y-coordinate for top left corner.
+     * @param width The width of the button.
+     * @param height The height of the button.
+     */
+    public void setSize(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        button.setBounds(x, y, width, height);
+    }
 }

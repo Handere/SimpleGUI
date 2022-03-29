@@ -1,28 +1,33 @@
 package simpleGUI;
 
 import javax.swing.*;
-import java.awt.*;
+
 
 /**
  * Label that can be attached and displayed on a Frame.
  */
 public class Label {
-    /**
-     * The title of the Label. Will be displayed.
-     */
-    String singleLineText;
 
     /**
      * The default text when the user don't enter it when the label is created
      */
-    String labelDefaultText = "Remember to add text";
+    String labelTxt = "Remember to add text";
 
     /**
      * The Frame the Label is attached to.
      */
     Frame owner;
 
-    JLabel label = new JLabel(labelDefaultText);
+
+    /**
+     *
+     */
+    JLabel label = new JLabel(labelTxt);
+
+    /**
+     * Variables that holds the label location and size
+     */
+    int x, y, width, height;
 
     /**
      * Constructor.
@@ -41,7 +46,8 @@ public class Label {
     public Label(Frame owner, String singleLineText) {
 
         this.owner = owner;
-        label.setText(singleLineText);
+        labelTxt = singleLineText;
+        label.setText(labelTxt);
         owner.frame.add(label);
     }
 
@@ -50,14 +56,23 @@ public class Label {
      * @param singleLineText The singleLineText of the Label. Will be displayed.
      */
     public void setTitle(String singleLineText) {
-        this.singleLineText = singleLineText;
+        labelTxt = singleLineText;
+        label.setText(labelTxt);
     }
+
 
     /**
      * Set the size of the label and location
-     * @param
+     * @param x X-coordinate for top left corner.
+     * @param y Y-coordinate for top left corner.
+     * @param width The width of the label.
+     * @param height The height of the label.
      */
     public void setSize(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
         label.setBounds(x, y, width, height);
     }
 }

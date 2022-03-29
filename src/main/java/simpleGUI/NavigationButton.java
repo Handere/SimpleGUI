@@ -2,10 +2,20 @@ package simpleGUI;
 
 import simpleGUI.scene.controls.Button;
 
+import javax.swing.*;
+
 /**
  * A button that is used to navigate between different windows.
  */
 public class NavigationButton implements Button {
+    /**
+     * The navigation bar the button is attached to.
+     */
+    NavigationBar owner;
+    /**
+     * The navigation button.
+     */
+    JMenu navigationButton;
     /**
      * The window the button will navigate to when clicked.
      */
@@ -13,22 +23,28 @@ public class NavigationButton implements Button {
     /**
      * The name of the button. Will be displayed.
      */
-    String buttonName;
+    String buttonName = "Example";
 
     /**
      * Constructor.
+     * @param owner The navigation bar the button is attached to.
      */
-    public NavigationButton() {
+    public NavigationButton(NavigationBar owner) {
+        this.owner = owner;
+        navigationButton = new JMenu(buttonName);
+        owner.navigationBar.add(navigationButton);
     }
 
     /**
      * Constructor.
-     * @param targetWindow The window the button will navigate to when clicked.
+     * @param owner The window the button will navigate to when clicked.
      * @param buttonName The name of the button. Will be displayed.
      */
-    public NavigationButton(Window targetWindow, String buttonName) {
-        this.targetWindow = targetWindow;
+    public NavigationButton(NavigationBar owner, String buttonName) {
+        this.owner = owner;
         this.buttonName = buttonName;
+        navigationButton = new JMenu(buttonName);
+        owner.navigationBar.add(navigationButton);
     }
 
     /**
