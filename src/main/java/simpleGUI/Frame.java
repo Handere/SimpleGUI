@@ -83,8 +83,8 @@ public class Frame {
      * Add a TextBox to the Frame.
      * @return new TextBox
      */
-    public MultiLineTextBox addTextBox() {
-        return new MultiLineTextBox(this);
+    public MultiLineTextBox addTextBox(boolean addScrollbar) {
+        return new MultiLineTextBox(this, addScrollbar);
     }
 
     /**
@@ -92,8 +92,8 @@ public class Frame {
      * @param content The content of the TextBox. Will be displayed.
      * @return new TextBox
      */
-    public MultiLineTextBox addTextBox(String content) {
-        return new MultiLineTextBox(this, content);
+    public MultiLineTextBox addTextBox(String content, boolean addScrollbar) {
+        return new MultiLineTextBox(this, content, addScrollbar);
     }
 
 
