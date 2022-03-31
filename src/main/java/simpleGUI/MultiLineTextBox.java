@@ -1,6 +1,8 @@
 package simpleGUI;
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
 
 /**
  * A text box module that can be attached to a Frame.
@@ -8,84 +10,100 @@ import javax.swing.*;
 public class MultiLineTextBox {
 
     /**
-     * The content of the TextBox. Will be displayed.
+     * The content of the MultiLineTextBox. Will be displayed.
      */
     String content = "This is a text box";
 
     /**
-     * How many rows the textbox should have.
+     * How many rows the MultiLineTextBox should have.
      */
     int rows;
 
     /**
-     * How many columns the textbox should have.
+     * How many columns the MultiLineTextBox should have.
      */
     int columns;
     /**
-     * The Frame the TextBox is attached to.
+     * The Frame the MultiLineTextBox is attached to.
      */
     Frame owner;
 
     /**
-     * The Textbox.
+     * The MultiLineTextBox.
      */
-    JTextArea textBox;
+    JTextArea multiLineTextBox;
 
+    JPanel multiLineTextBoxPanel = new JPanel();
+    JScrollPane scrollbar;
 
     /**
-     * Variables that holds the TextBox location and size
+     * Variables that holds the MultiLineTextBox location and size
      */
     int x, y, width, height;
 
     /**
      * Constructor.
-     * @param owner The Frame the TextBox is attached to
+     * @param owner The Frame the MultiLineTextBox is attached to
      */
-    public MultiLineTextBox(Frame owner) {
+    public MultiLineTextBox(Frame owner, boolean addScrollbar) {
         this.owner = owner;
-        this.textBox = new JTextArea();
-        textBox.setText(content);
-        rows = textBox.getRows();
-        columns = textBox.getColumns();
-        owner.frame.add(textBox);
+        this.multiLineTextBox = new JTextArea(16,58);
+        buildMultiLineTextBox(addScrollbar);
     }
-
 
     /**
      * The Constructor
-     * @param owner The frame the textbox is attached to.
-     * @param content The content in the Textbox.
+     * @param owner The frame the MultiLineTextBox is attached to.
+     * @param content The content in the MultiLineTextBox.
      */
-    public MultiLineTextBox(Frame owner, String content) {
+    public MultiLineTextBox(Frame owner, String content, boolean addScrollbar) {
         this.owner = owner;
-        this.textBox = new JTextArea();
-        textBox.setText(content);
-        rows = textBox.getRows();
-        columns = textBox.getColumns();
-        owner.frame.add(textBox);
+        this.multiLineTextBox = new JTextArea(16, 58);
+        buildMultiLineTextBox(addScrollbar);
     }
 
-
     /**
-     * Set a new content to the TextBox.
-     * @param content The content of the TextBox. Will be displayed.
+     * Set a new content to the MultiLineTextBox.
+     * @param content The content of the MultiLineTextBox. Will be displayed.
      */
     public void setContent(String content) {
         this.content = content;
     }
 
     /**
-     * Setting the size of the Textbox
+     * Setting the size of the MultiLineTextBox
      * @param x X-coordinate for top left corner.
      * @param y Y-coordinate for top left corner.
-     * @param width The width of the TextBox.
-     * @param height The height of the TextBox.
+     * @param width The width of the MultiLineTextBox.
+     * @param height The height of the MultiLineTextBox.
      */
     public void setSize(int x, int y, int width, int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-        textBox.setBounds(x, y, width, height);
+        multiLineTextBox.setBounds(x, y, width, height);
+    }
+
+    private void addScrollbar() {
+        scrollbar = new JScrollPane(multiLineTextBox);
+        scrollbar.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+    }
+
+    private void buildMultiLineTextBox(boolean addScrollbar) {
+        multiLineTextBox.setText(content);
+        rows = multiLineTextBox.getRows();
+        columns = multiLineTextBox.getColumns();
+        multiLineTextBoxPanel.setBorder(new TitledBorder(new EtchedBorder(), "Border"));
+        if(addScrollbar) {
+            addScrollbar();
+            multiLineTextBoxPanel.add(scrollbar);
+
+        }else {
+
+            multiLineTextBoxPanel.add(multiLineTextBox);
+        }
+        owner.frame.add(multiLineTextBoxPanel);
+        owner.owner.window.pack();
     }
 }
