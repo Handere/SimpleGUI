@@ -1,11 +1,6 @@
 package simpleGUI;
 
 import java.awt.*;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 import simpleGUI.handlers.ScrollbarHandler;
 import javax.swing.*;
 

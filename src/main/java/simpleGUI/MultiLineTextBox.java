@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * A text box module that can be attached to a Frame.
  */
-public class TextBox {
+public class MultiLineTextBox {
 
     /**
      * The content of the TextBox. Will be displayed.
@@ -41,7 +41,7 @@ public class TextBox {
      * Constructor.
      * @param owner The Frame the TextBox is attached to
      */
-    public TextBox(Frame owner) {
+    public MultiLineTextBox(Frame owner) {
         this.owner = owner;
         this.textBox = new JTextArea();
         textBox.setText(content);
@@ -56,7 +56,7 @@ public class TextBox {
      * @param owner The frame the textbox is attached to.
      * @param content The content in the Textbox.
      */
-    public TextBox(Frame owner, String content) {
+    public MultiLineTextBox(Frame owner, String content) {
         this.owner = owner;
         this.textBox = new JTextArea();
         textBox.setText(content);

@@ -1,11 +1,6 @@
-import simpleGUI.NavigationButton;
-import simpleGUI.TextBox;
+import simpleGUI.MenuButton;
+import simpleGUI.MultiLineTextBox;
 import simpleGUI.Window;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
 
 /**
  * Test main
@@ -19,12 +14,12 @@ public class Main {
         window.addFrame();
         window.getFrame().addActionButton("hello");
         window.addNavigationBar();
-        NavigationButton navigationButton1 = window.navigationBar().addNavigationButton("hello");
-        NavigationButton navigationButton2 = window.navigationBar().addNavigationButton("what?");
-        NavigationButton navigationButton3 = window.navigationBar().addNavigationButton("wtf?");
+        MenuButton menuButton1 = window.navigationBar().addNavigationButton("hello");
+        MenuButton menuButton2 = window.navigationBar().addNavigationButton("what?");
+        MenuButton menuButton3 = window.navigationBar().addNavigationButton("wtf?");
         window.getFrame().addLabel().setSize(4,4,60,50);
-        TextBox textBox = window.getFrame().addTextBox();
-        textBox.setSize(40, 40, 20, 20);
+        MultiLineTextBox multiLineTextBox = window.getFrame().addTextBox();
+        multiLineTextBox.setSize(40, 40, 20, 20);
 
         //window.addScrollbar1();
         //window.addScrollbar(true, true);

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Hold navigation elements that will be placed on its attached window.
  */
-public class NavigationBar {
+public class Menu {
     /**
      * The Window the NavigationBar is attached to.
      */
@@ -22,13 +22,13 @@ public class NavigationBar {
     /**
      * The attached NavigationButtons.
      */
-    ArrayList<NavigationButton> navigationButtons;
+    ArrayList<MenuButton> menuButtons;
 
     /**
      * Constructor.
      * @param owner The Frame the NavigationBar is attached to.
      */
-    public NavigationBar(Window owner) {
+    public Menu(Window owner) {
         this.owner = owner;
         navigationBar = new JMenuBar();
         owner.window.setJMenuBar(navigationBar);
@@ -46,8 +46,8 @@ public class NavigationBar {
      * Add a NavigationButton to the NavigationBar, without any name or target window.
      * @return new NavigationButton
      */
-    public NavigationButton addNavigationButton() {
-        return new NavigationButton(this);
+    public MenuButton addNavigationButton() {
+        return new MenuButton(this);
     }
 
     /**
@@ -55,8 +55,8 @@ public class NavigationBar {
      * @param buttonName The name of the button. Will be displayed.
      * @return new NavigationButton
      */
-    public NavigationButton addNavigationButton(String buttonName) {
-        return new NavigationButton(this, buttonName);
+    public MenuButton addNavigationButton(String buttonName) {
+        return new MenuButton(this, buttonName);
     }
 
 }

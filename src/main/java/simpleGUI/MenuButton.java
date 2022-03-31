@@ -7,11 +7,11 @@ import javax.swing.*;
 /**
  * A button that is used to navigate between different windows.
  */
-public class NavigationButton implements Button {
+public class MenuButton implements Button {
     /**
      * The navigation bar the button is attached to.
      */
-    NavigationBar owner;
+    Menu owner;
     /**
      * The navigation button.
      */
@@ -29,7 +29,7 @@ public class NavigationButton implements Button {
      * Constructor.
      * @param owner The navigation bar the button is attached to.
      */
-    public NavigationButton(NavigationBar owner) {
+    public MenuButton(Menu owner) {
         this.owner = owner;
         navigationButton = new JMenu(buttonName);
         owner.navigationBar.add(navigationButton);
@@ -40,7 +40,7 @@ public class NavigationButton implements Button {
      * @param owner The window the button will navigate to when clicked.
      * @param buttonName The name of the button. Will be displayed.
      */
-    public NavigationButton(NavigationBar owner, String buttonName) {
+    public MenuButton(Menu owner, String buttonName) {
         this.owner = owner;
         this.buttonName = buttonName;
         navigationButton = new JMenu(buttonName);

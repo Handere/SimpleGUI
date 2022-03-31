@@ -1,8 +1,7 @@
 package simpleGUI;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
+
 
 /**
  * Functions as a root when building the GUI.
@@ -35,7 +34,7 @@ public class Window {
     /**
      * The attached NavigationBar, if added.
      */
-    private NavigationBar navigationBar;
+    private Menu menu;
     /**
      * The attached Frames, if added.
      */
@@ -180,15 +179,15 @@ public class Window {
      * Add a NavigationBar to the window that by default is placed horizontal at the top of the window.
      * @return new NavigationBar
      */
-    public NavigationBar addNavigationBar(){
-        return navigationBar = new NavigationBar(this);
+    public Menu addNavigationBar(){
+        return menu = new Menu(this);
     }
 
     /**
      * Return the NavigationBar attached to the window.
      * @return NavigationBar
      */
-    public NavigationBar navigationBar(){
-        return navigationBar;
+    public Menu navigationBar(){
+        return menu;
     }
 }

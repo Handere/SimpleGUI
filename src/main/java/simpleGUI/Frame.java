@@ -1,6 +1,5 @@
 package simpleGUI;
 
-import simpleGUI.handlers.FrameHandler;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,7 +20,7 @@ public class Frame {
     /**
      * The navigation bar, if added.
      */
-    NavigationBar navigationBar;
+    Menu menu;
 
     /**
      * Constructor.
@@ -66,8 +65,8 @@ public class Frame {
      * Add a Label to the Frame, without a title.
      * @return new Label
      */
-    public Label addLabel(){
-        return new Label(this);
+    public SingleLineTextLabel addLabel(){
+        return new SingleLineTextLabel(this);
     }
 
     /**
@@ -75,17 +74,17 @@ public class Frame {
      * @param singleLineText The title of the Label. Will be displayed.
      * @return new Label
      */
-    public Label addLabel(String singleLineText){
+    public SingleLineTextLabel addLabel(String singleLineText){
 
-        return new Label(this, singleLineText);
+        return new SingleLineTextLabel(this, singleLineText);
     }
 
     /**
      * Add a TextBox to the Frame.
      * @return new TextBox
      */
-    public TextBox addTextBox() {
-        return new TextBox(this);
+    public MultiLineTextBox addTextBox() {
+        return new MultiLineTextBox(this);
     }
 
     /**
@@ -93,8 +92,8 @@ public class Frame {
      * @param content The content of the TextBox. Will be displayed.
      * @return new TextBox
      */
-    public TextBox addTextBox(String content) {
-        return new TextBox(this, content);
+    public MultiLineTextBox addTextBox(String content) {
+        return new MultiLineTextBox(this, content);
     }
 
 
