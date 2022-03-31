@@ -13,7 +13,8 @@ public class Main {
         Window window = new Window();
         window.addFrame();
 
-        MultiLineTextBox multiLineTextBox = window.getFrame().addTextBox("vhsdfhjgsdfjhgsdf", true);
+        MultiLineTextBox multiLineTextBox = window.getFrame().addMultiLineTextBox("vhsdfhjgsdfjhgsdf", true, "Hei");
+        window.getFrame().addActionButton();
 
 
         //window.addScrollbar1();

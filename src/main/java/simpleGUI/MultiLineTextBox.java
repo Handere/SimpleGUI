@@ -14,6 +14,8 @@ public class MultiLineTextBox {
      */
     String content = "This is a text box";
 
+    String borderTitle = "Border title";
+
     /**
      * How many rows the MultiLineTextBox should have.
      */
@@ -63,6 +65,18 @@ public class MultiLineTextBox {
     }
 
     /**
+     * The Constructor
+     * @param owner The frame the MultiLineTextBox is attached to.
+     * @param content The content in the MultiLineTextBox.
+     */
+    public MultiLineTextBox(Frame owner, String content, boolean addScrollbar, String borderTitle) {
+        this.owner = owner;
+        this.multiLineTextBox = new JTextArea(16, 58);
+        this.borderTitle = borderTitle;
+        buildMultiLineTextBox(addScrollbar);
+    }
+
+    /**
      * Set a new content to the MultiLineTextBox.
      * @param content The content of the MultiLineTextBox. Will be displayed.
      */
@@ -94,7 +108,7 @@ public class MultiLineTextBox {
         multiLineTextBox.setText(content);
         rows = multiLineTextBox.getRows();
         columns = multiLineTextBox.getColumns();
-        multiLineTextBoxPanel.setBorder(new TitledBorder(new EtchedBorder(), "Border"));
+        multiLineTextBoxPanel.setBorder(new TitledBorder(new EtchedBorder(), borderTitle));
         if(addScrollbar) {
             addScrollbar();
             multiLineTextBoxPanel.add(scrollbar);

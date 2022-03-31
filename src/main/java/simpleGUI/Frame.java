@@ -80,20 +80,33 @@ public class Frame {
     }
 
     /**
-     * Add a TextBox to the Frame.
-     * @return new TextBox
+     * Add a MultiLineTextBox to the Frame.
+     * @param addScrollbar If true, adds a scrollbar.
+     * @return new MultiLineTextBox
      */
-    public MultiLineTextBox addTextBox(boolean addScrollbar) {
+    public MultiLineTextBox addMultiLineTextBox(boolean addScrollbar) {
         return new MultiLineTextBox(this, addScrollbar);
     }
 
     /**
-     * Add a TextBox to the Frame.
+     * Add a MultiLineTextBox to the Frame.
      * @param content The content of the TextBox. Will be displayed.
-     * @return new TextBox
+     * @param addScrollbar If true, adds a scrollbar.
+     * @return new MultiLineTextBox
      */
-    public MultiLineTextBox addTextBox(String content, boolean addScrollbar) {
+    public MultiLineTextBox addMultiLineTextBox(String content, boolean addScrollbar) {
         return new MultiLineTextBox(this, content, addScrollbar);
+    }
+
+    /**
+     * Add a MultiLineTextBox to the Frame.
+     * @param content The content of the TextBox. Will be displayed.
+     * @param addScrollbar If true, adds a scrollbar.
+     * @param borderTitle Set the title of the border.
+     * @return new MultiLineTextBox
+     */
+    public MultiLineTextBox addMultiLineTextBox(String content, boolean addScrollbar, String borderTitle) {
+        return new MultiLineTextBox(this, content, addScrollbar, borderTitle);
     }
 
 
