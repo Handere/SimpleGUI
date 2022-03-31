@@ -13,7 +13,7 @@ public class Main {
         Window window = new Window();
         window.addFrame();
 
-        MultiLineTextBox multiLineTextBox = window.getFrame().addMultiLineTextBox("vhsdfhjgsdfjhgsdf", true, "Hei");
+        MultiLineTextBox multiLineTextBox = window.getFrame().addMultiLineTextBox("vhsdfhjgsdfjhgsdf", false, "hsdfhjgsdf");
         window.getFrame().addActionButton();
 
 

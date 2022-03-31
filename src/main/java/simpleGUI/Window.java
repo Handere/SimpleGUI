@@ -28,10 +28,6 @@ public class Window {
     private int widthInPixels = 500;
 
     /**
-     * The attached Scrollbar, if added.
-     */
-    private Scrollbar scrollbar;
-    /**
      * The attached NavigationBar, if added.
      */
     private Menu menu;
@@ -147,32 +143,6 @@ public class Window {
      */
     public Frame getFrame() {
         return frame;
-    }
-
-    /**
-     * Add a scrollbar that by default is placed on the right of the window, with vertical scrolling.
-     * @return new Scrollbar
-     */
-    public Scrollbar addScrollbar() {
-        return scrollbar = new Scrollbar(this);
-    }
-
-    /**
-     * Add a scrollbar that by default is placed on the right of the window, with vertical scrolling.
-     * @param alwaysShowVertical Set the vertical scrollbar to always visible if true, and if needed when false.
-     * @param alwaysShowHorizontal Set the horizontal scrollbar to always visible if true, and if needed when false.
-     * @return new Scrollbar
-     */
-    public Scrollbar addScrollbar(boolean alwaysShowVertical, boolean alwaysShowHorizontal) {
-        return scrollbar = new Scrollbar(this, alwaysShowVertical, alwaysShowHorizontal);
-    }
-
-    /**
-     * Return the scrollbar attached to the window.
-     * @return Scrollbar
-     */
-    public Scrollbar scrollbar() {
-        return scrollbar;
     }
 
     /**
