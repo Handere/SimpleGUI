@@ -9,33 +9,28 @@ import javax.swing.*;
 public class SingleLineTextLabel {
 
     /**
-     * The default text when the user don't enter it when the label is created
+     * The default text when the user don't enter it when the SingleLineTextLabel is created
      */
-    String labelTxt = "Remember to add text";
+    String defaultText = "Remember to add text";
 
     /**
      * The Frame the Label is attached to.
      */
     Frame owner;
 
-
     /**
-     *
+     * The SingleLineTextLabel
      */
-    JLabel label = new JLabel(labelTxt);
-
-    /**
-     * Variables that holds the label location and size
-     */
-    int x, y, width, height;
+    JLabel singleLineTextLabel;
 
     /**
      * Constructor.
      * @param owner The Frame the Label is attached to.
      */
     public SingleLineTextLabel(Frame owner) {
+        this.singleLineTextLabel = new JLabel(defaultText);
         this.owner = owner;
-        owner.frame.add(label);
+        owner.frame.add(singleLineTextLabel);
     }
 
     /**
@@ -44,10 +39,9 @@ public class SingleLineTextLabel {
      * @param singleLineText The text inside the Label. Will be displayed.
      */
     public SingleLineTextLabel(Frame owner, String singleLineText) {
-
+        this.singleLineTextLabel = new JLabel(singleLineText);
         this.owner = owner;
-        label.setText(singleLineText);
-        owner.frame.add(label);
+        owner.frame.add(singleLineTextLabel);
     }
 
     /**
@@ -55,7 +49,7 @@ public class SingleLineTextLabel {
      * @param singleLineText The singleLineText of the Label. Will be displayed.
      */
     public void setTitle(String singleLineText) {
-        label.setText(singleLineText);
+        singleLineTextLabel.setText(singleLineText);
     }
 
 
@@ -67,10 +61,6 @@ public class SingleLineTextLabel {
      * @param height The height of the label.
      */
     public void setSize(int x, int y, int width, int height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-        label.setBounds(x, y, width, height);
+        singleLineTextLabel.setBounds(x, y, width, height);
     }
 }
