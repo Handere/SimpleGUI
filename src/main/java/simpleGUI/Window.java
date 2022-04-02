@@ -146,18 +146,18 @@ public class Window {
     }
 
     /**
-     * Add a NavigationBar to the window that by default is placed horizontal at the top of the window.
-     * @return new NavigationBar
+     * Add a Menu to the window that by default is placed horizontal at the top of the window.
+     * @return new Menu
      */
-    public Menu addNavigationBar(){
+    public Menu addMenu(){
         return menu = new Menu(this);
     }
 
     /**
-     * Return the NavigationBar attached to the window.
-     * @return NavigationBar
+     * Return the Menu attached to the window.
+     * @return Menu
      */
-    public Menu navigationBar(){
+    public Menu getMenu(){
         return menu;
     }
 }
