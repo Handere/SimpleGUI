@@ -19,10 +19,6 @@ public class Menu {
      * The attached BreadCrumbs.
      */
     BreadCrumbs breadCrumbs;
-    /**
-     * The attached MenuButtons.
-     */
-    ArrayList<MenuButton> menuButtons;
 
     /**
      * Constructor.
