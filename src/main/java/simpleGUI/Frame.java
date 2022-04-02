@@ -17,10 +17,6 @@ public class Frame {
      * The frame.
      */
     Container frame;
-    /**
-     * The navigation bar, if added.
-     */
-    Menu menu;
 
     /**
      * Constructor.
@@ -62,19 +58,19 @@ public class Frame {
     }
 
     /**
-     * Add a Label to the Frame, without a title.
-     * @return new Label
+     * Add a SingleLineTextLabel to the Frame, without a title.
+     * @return new SingleLineTextLabel
      */
-    public SingleLineTextLabel addLabel(){
+    public SingleLineTextLabel addSingleLineTextLabel(){
         return new SingleLineTextLabel(this);
     }
 
     /**
-     * Add a Label to the Frame.
+     * Add a SingleLineTextLabel to the Frame.
      * @param singleLineText The title of the Label. Will be displayed.
-     * @return new Label
+     * @return new SingleLineTextLabel
      */
-    public SingleLineTextLabel addLabel(String singleLineText){
+    public SingleLineTextLabel addSingleLineTextLabel(String singleLineText){
 
         return new SingleLineTextLabel(this, singleLineText);
     }
