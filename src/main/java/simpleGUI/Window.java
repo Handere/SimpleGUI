@@ -4,7 +4,7 @@ import javax.swing.*;
 
 
 /**
- * Functions as a root when building the GUI.
+ * The root window when building the GUI.
  */
 public class Window {
 
