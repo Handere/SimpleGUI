@@ -45,6 +45,7 @@ public class Window {
         this.window = new JFrame(defaultTitle);
         window.setSize(defaultWidthInPixels, defaultHeightInPixels);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
+        setDefaultIcon();
     }
 
     /**
@@ -57,6 +58,7 @@ public class Window {
         this.window = new JFrame(title);
         window.setSize(defaultWidthInPixels, defaultHeightInPixels);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
+        setDefaultIcon();
     }
 
     /**
@@ -70,6 +72,7 @@ public class Window {
         this.window = new JFrame(defaultTitle);
         window.setSize(widthInPixels, heightInPixels);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
+        setDefaultIcon();
     }
 
     /**
@@ -84,6 +87,7 @@ public class Window {
         this.window = new JFrame(title);
         window.setSize(widthInPixels, heightInPixels);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
+        setDefaultIcon();
     }
 
     /**
@@ -149,5 +153,13 @@ public class Window {
      */
     public Menu getMenu(){
         return menu;
+    }
+
+    /**
+     * Set default window icon.
+     */
+    private void setDefaultIcon() {
+        ImageIcon icon = new ImageIcon("SG.png");
+        window.setIconImage(icon.getImage());
     }
 }
