@@ -4,34 +4,34 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
- * Hold navigation elements that will be placed on its attached window.
+ * Hold menu elements that will be placed on its attached window.
  */
 public class Menu {
     /**
-     * The Window the NavigationBar is attached to.
+     * The Window the Menu is attached to.
      */
     Window owner;
     /**
-     * The navigation bar.
+     * The menu.
      */
-    JMenuBar navigationBar;
+    JMenuBar menu;
     /**
      * The attached BreadCrumbs.
      */
     BreadCrumbs breadCrumbs;
     /**
-     * The attached NavigationButtons.
+     * The attached MenuButtons.
      */
     ArrayList<MenuButton> menuButtons;
 
     /**
      * Constructor.
-     * @param owner The Frame the NavigationBar is attached to.
+     * @param owner The Frame the Menu is attached to.
      */
     public Menu(Window owner) {
         this.owner = owner;
-        navigationBar = new JMenuBar();
-        owner.window.setJMenuBar(navigationBar);
+        menu = new JMenuBar();
+        owner.window.setJMenuBar(menu);
     }
 
     /**
@@ -43,19 +43,19 @@ public class Menu {
     }
 
     /**
-     * Add a NavigationButton to the NavigationBar, without any name or target window.
-     * @return new NavigationButton
+     * Add a MenuButton to the Menu, with default name and no target window.
+     * @return new MenuButton
      */
-    public MenuButton addNavigationButton() {
+    public MenuButton addMenuButton() {
         return new MenuButton(this);
     }
 
     /**
-     * Add a NavigationButton to the NavigationBar.
+     * Add a MenuButton to the Menu.
      * @param buttonName The name of the button. Will be displayed.
-     * @return new NavigationButton
+     * @return new MenuButton
      */
-    public MenuButton addNavigationButton(String buttonName) {
+    public MenuButton addMenuButton(String buttonName) {
         return new MenuButton(this, buttonName);
     }
 

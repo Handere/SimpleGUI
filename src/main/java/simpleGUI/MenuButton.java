@@ -27,12 +27,12 @@ public class MenuButton implements Button {
 
     /**
      * Constructor.
-     * @param owner The navigation bar the button is attached to.
+     * @param owner The menu the button is attached to.
      */
     public MenuButton(Menu owner) {
         this.owner = owner;
         menuButton = new JMenu(defaultButtonName);
-        owner.navigationBar.add(menuButton);
+        owner.menu.add(menuButton);
     }
 
     /**
@@ -43,7 +43,7 @@ public class MenuButton implements Button {
     public MenuButton(Menu owner, String buttonName) {
         this.owner = owner;
         menuButton = new JMenu(buttonName);
-        owner.navigationBar.add(menuButton);
+        owner.menu.add(menuButton);
     }
 
     /**
