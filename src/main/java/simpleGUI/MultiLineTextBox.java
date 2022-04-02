@@ -10,10 +10,13 @@ import javax.swing.border.TitledBorder;
 public class MultiLineTextBox {
 
     /**
-     * The text content of the MultiLineTextBox. Will be displayed.
+     * The default text content of the MultiLineTextBox. Will be displayed.
      */
     String defaultText = "This is a text box.";
 
+    /**
+     * The default border title. Will be displayed.
+     */
     String defaultBorderTitle = "Border title";
 
     /**
@@ -22,7 +25,7 @@ public class MultiLineTextBox {
     int defaultNumberOfRows = 15;
 
     /**
-     * The default number of columns the MultiLineTextBox should have.
+     * The default number of columns the MultiLineTextBox have.
      */
     int defaultNumberOfColumns = 60;
 
@@ -36,12 +39,20 @@ public class MultiLineTextBox {
      */
     JTextArea multiLineTextBox;
 
+    /**
+     * The container holding the MultiLineTextBox.
+     */
     JPanel multiLineTextBoxPanel = new JPanel();
+
+    /**
+     * A vertical (always show) and horizontal (if needed) scrollbar, if added.
+     */
     JScrollPane scrollbar;
 
     /**
      * Constructor.
-     * @param owner The Frame the MultiLineTextBox is attached to
+     * @param owner The Frame the MultiLineTextBox is attached to.
+     * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      */
     public MultiLineTextBox(Frame owner, boolean addScrollbar) {
         this.owner = owner;
@@ -52,7 +63,8 @@ public class MultiLineTextBox {
     /**
      * The Constructor
      * @param owner The frame the MultiLineTextBox is attached to.
-     * @param text The content in the MultiLineTextBox.
+     * @param text The text content in the MultiLineTextBox.
+     * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      */
     public MultiLineTextBox(Frame owner, String text, boolean addScrollbar) {
         this.owner = owner;
@@ -63,7 +75,9 @@ public class MultiLineTextBox {
     /**
      * The Constructor
      * @param owner The frame the MultiLineTextBox is attached to.
-     * @param text The content in the MultiLineTextBox.
+     * @param text The text content in the MultiLineTextBox.
+     * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
+     * @param borderTitle The title of the border.
      */
     public MultiLineTextBox(Frame owner, String text, boolean addScrollbar, String borderTitle) {
         this.owner = owner;
@@ -73,7 +87,7 @@ public class MultiLineTextBox {
 
     /**
      * Set a new content to the MultiLineTextBox.
-     * @param text The content of the MultiLineTextBox. Will be displayed.
+     * @param text The text content of the MultiLineTextBox. Will be displayed.
      */
     public void setText(String text) {
         multiLineTextBox.setText(text);
@@ -90,11 +104,19 @@ public class MultiLineTextBox {
         multiLineTextBox.setBounds(x, y, width, height);
     }
 
+    /**
+     * Add a scrollbar to the MultiLineTextBox.
+     */
     private void addScrollbar() {
         scrollbar = new JScrollPane(multiLineTextBox);
         scrollbar.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     }
 
+    /**
+     * Build the MultiLineText box as spesified.
+     * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
+     * @param borderTitle The title of the border.
+     */
     private void buildMultiLineTextBox(boolean addScrollbar, String borderTitle) {
         multiLineTextBox.setText(defaultText);
         multiLineTextBoxPanel.setBorder(new TitledBorder(new EtchedBorder(), borderTitle));
