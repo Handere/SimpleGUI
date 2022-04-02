@@ -9,9 +9,9 @@ import javax.swing.*;
  */
 public class ActionButton implements Button {
     /**
-     * The name of the button. By default, set to "Click me"
+     * The default name of the button.
      */
-    String buttonName = "Click me";
+    String defaultButtonName = "Click me";
     /**
      * The Frame the button is attached to.
      */
@@ -22,21 +22,13 @@ public class ActionButton implements Button {
     JButton button;
 
     /**
-     * The width of the button.
+     * The default width of the button.
      */
-    int width = 100;
+    int defaultWidthInPixels = 100;
     /**
-     * The height of the button.
+     * The default height of the button.
      */
-    int height = 50;
-    /**
-     * X-coordinate for top left corner.
-     */
-    int x;
-    /**
-     * Y-coordinate for top left corner.
-     */
-    int y;
+    int defaultHeightInPixels = 50;
 
     /**
      * Constructor.
@@ -45,10 +37,8 @@ public class ActionButton implements Button {
      */
     public ActionButton(Frame owner) {
         this.owner = owner;
-        this.button = new JButton(buttonName);
-        this.x = button.getX();
-        this.y = button.getY();
-        button.setBounds(x, y, width, height);
+        this.button = new JButton(defaultButtonName);
+        button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, defaultHeightInPixels);
         owner.frame.add(button);
     }
 
@@ -58,12 +48,9 @@ public class ActionButton implements Button {
      * @param buttonName The name of the button. Will be displayed.
      */
     public ActionButton(Frame owner, String buttonName) {
-        this.buttonName = buttonName;
         this.owner = owner;
         this.button = new JButton(buttonName);
-        this.x = button.getX();
-        this.y = button.getY();
-        button.setBounds(x, y, width, height);
+        button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, defaultHeightInPixels);
         owner.frame.add(button);
     }
 
@@ -75,14 +62,9 @@ public class ActionButton implements Button {
      * @param height The button height.
      */
     public ActionButton(Frame owner, String buttonName, int width, int height) {
-        this.buttonName = buttonName;
         this.owner = owner;
-        this.width = width;
-        this.height = height;
         this.button = new JButton(buttonName);
-        this.x = button.getX();
-        this.y = button.getY();
-        button.setBounds(x, y, width, height);
+        button.setBounds(button.getX(), button.getY(), width, height);
         owner.frame.add(button);
     }
 
@@ -90,25 +72,22 @@ public class ActionButton implements Button {
      * Set the name of the button.
      * @param buttonName The name of the button. Will be displayed.
      */
-    public void setButtonName(String buttonName) {
-        this.buttonName = buttonName;
+    public void setDefaultButtonName(String buttonName) {
         button.setName(buttonName);
     }
 
     /**
      * @param width The button width.
      */
-    public void setWidth(int width) {
-        this.width = width;
-        button.setBounds(x, y, width, height);
+    public void setDefaultWidthInPixels(int width) {
+        button.setBounds(button.getX(), button.getY(), width, defaultHeightInPixels);
     }
 
     /**
      * @param height The button height.
      */
-    public void setHeight(int height) {
-        this.height = height;
-        button.setBounds(x, y, width, height);
+    public void setDefaultHeightInPixels(int height) {
+        button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, height);
     }
 
     /**
@@ -119,10 +98,6 @@ public class ActionButton implements Button {
      * @param height The height of the button.
      */
     public void setSize(int x, int y, int width, int height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
         button.setBounds(x, y, width, height);
     }
 }
