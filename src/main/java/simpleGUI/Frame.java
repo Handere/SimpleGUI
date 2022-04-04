@@ -83,6 +83,14 @@ public class Frame {
     public MultiLineTextBox addMultiLineTextBox(boolean addScrollbar) {
         return new MultiLineTextBox(this, addScrollbar);
     }
+    /**
+     * Add a MultiLineTextBox to the Frame.
+     * @param content the content
+     * @return new MultiLineTextBox
+     */
+    public MultiLineTextBox addMultiLineTextBox(String content) {
+        return new MultiLineTextBox(this, content);
+    }
 
     /**
      * Add a MultiLineTextBox to the Frame.

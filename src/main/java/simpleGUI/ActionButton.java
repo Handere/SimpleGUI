@@ -72,21 +72,21 @@ public class ActionButton implements Button {
      * Set the name of the button.
      * @param buttonName The name of the button. Will be displayed.
      */
-    public void setDefaultButtonName(String buttonName) {
+    public void setButtonName(String buttonName) {
         button.setName(buttonName);
     }
 
     /**
      * @param width The button width.
      */
-    public void setDefaultWidthInPixels(int width) {
+    public void setWidthInPixels(int width) {
         button.setBounds(button.getX(), button.getY(), width, defaultHeightInPixels);
     }
 
     /**
      * @param height The button height.
      */
-    public void setDefaultHeightInPixels(int height) {
+    public void setHeightInPixels(int height) {
         button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, height);
     }
 

@@ -57,7 +57,18 @@ public class MultiLineTextBox {
     public MultiLineTextBox(Frame owner, boolean addScrollbar) {
         this.owner = owner;
         this.multiLineTextBox = new JTextArea(defaultNumberOfRows,defaultNumberOfColumns);
-        buildMultiLineTextBox(addScrollbar, defaultBorderTitle);
+        buildMultiLineTextBox(addScrollbar, defaultBorderTitle, defaultText);
+    }
+
+    /**
+     * Constructor.
+     * @param owner The Frame the MultiLineTextBox is attached to.
+     */
+    public MultiLineTextBox(Frame owner, String text) {
+        this.owner = owner;
+        this.multiLineTextBox = new JTextArea(text, defaultNumberOfRows,defaultNumberOfColumns);
+        boolean addScrollbar = false;
+        buildMultiLineTextBox(addScrollbar, defaultBorderTitle, text);
     }
 
     /**
@@ -69,7 +80,7 @@ public class MultiLineTextBox {
     public MultiLineTextBox(Frame owner, String text, boolean addScrollbar) {
         this.owner = owner;
         this.multiLineTextBox = new JTextArea(text, defaultNumberOfRows, defaultNumberOfColumns);
-        buildMultiLineTextBox(addScrollbar, defaultBorderTitle);
+        buildMultiLineTextBox(addScrollbar, defaultBorderTitle, text);
     }
 
     /**
@@ -82,7 +93,7 @@ public class MultiLineTextBox {
     public MultiLineTextBox(Frame owner, String text, boolean addScrollbar, String borderTitle) {
         this.owner = owner;
         this.multiLineTextBox = new JTextArea(text, defaultNumberOfRows, defaultNumberOfColumns);
-        buildMultiLineTextBox(addScrollbar, borderTitle);
+        buildMultiLineTextBox(addScrollbar, borderTitle, text);
     }
 
     /**
@@ -117,8 +128,8 @@ public class MultiLineTextBox {
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      * @param borderTitle The title of the border.
      */
-    private void buildMultiLineTextBox(boolean addScrollbar, String borderTitle) {
-        multiLineTextBox.setText(defaultText);
+    private void buildMultiLineTextBox(boolean addScrollbar, String borderTitle, String text) {
+        multiLineTextBox.setText(text);
         multiLineTextBoxPanel.setBorder(new TitledBorder(new EtchedBorder(), borderTitle));
         if(addScrollbar) {
             addScrollbar();
