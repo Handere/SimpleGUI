@@ -1,6 +1,6 @@
 package simpleGUI;
 
-
+//TODO: Merge with Window
 import javax.swing.*;
 import java.awt.*;
 
