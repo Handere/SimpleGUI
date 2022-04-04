@@ -1,0 +1,33 @@
+Oppsett
+Rammeverket ligger i filen: 		SimpleGUI-2.0-SNAPSHOT.jar
+Dokumentasjonen ligger i filen: 	javadoc/allpackages-index.html
+Pakken som skal importeres: 		simpleGUI
+MERK: Det er kun pakken simpleGUI som skal testes. Det skal ikke være nødvendig å importere andre 
+pakker i rammeverket for å løse scenarioene.
+
+
+Scenario
+//Scenario 2.10: Opprette et vindu og sett størrelse 600x700, med en ramme og legg til en én-linje 
+merkelapp med teksten "Rammeverk" og en flere-linjet tekstboks med teksten "Rammeverk gruppe 25, 
+jobber som bare det!", og legg til en knapp som heter "Bra", og bygg vinduet.
+
+//Scenario 2.11: Opprette ett vindu med standard størrelse. Legg til en ramme med en meny og to 
+menyknapper med navnene “Fil” og “Innstillinger”. Legg til en fler-linjet tekstboks med scrollbar 
+og rammetittelen “Min dagbok”. Legg til én knapp med navn “Lagre” og én knapp med navn “Slett” 
+under tekstboksen.
+
+//Scenario 2.12: Opprett et vindu med tittel “Mitt vindu”. Legg til en ramme med to én-linje 
+merkelapper med navn “Liker-knapp” og “Sende-knapp”. Hver merkelapp skal ha én korresponderende 
+knapp som plasseres under merkelappen, med navnene “Liker” og “Send”.
+
+
+Tilbakemelding
+Er prosjektet enkelt å sette opp?
+
+Er navngivingen av klasser og metoder intuitiv?
+
+Hva er førsteinntrykket av rammeverket?
+
+Noen andre kommentarer?
+
+
