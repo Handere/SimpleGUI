@@ -63,6 +63,7 @@ public class MultiLineTextBox {
     /**
      * Constructor.
      * @param owner The Frame the MultiLineTextBox is attached to.
+     * @param text The text content
      */
     public MultiLineTextBox(Frame owner, String text) {
         this.owner = owner;
