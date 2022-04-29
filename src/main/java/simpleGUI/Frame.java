@@ -25,7 +25,7 @@ public class Frame {
      */
     public Frame(Window owner) {
         this.owner = owner;
-        frame = owner.window.getContentPane();
+        frame = owner.getWindow().getContentPane();
         frame.setLayout(new BoxLayout(frame, BoxLayout.PAGE_AXIS));
     }
 

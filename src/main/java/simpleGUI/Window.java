@@ -11,21 +11,21 @@ public class Window {
     /**
      * The GUI window.
      */
-    JFrame window;
+    private JFrame window;
 
     /**
      * The default title of the Window.
      */
-    private final String defaultTitle = "SimpleGUI";
+    private final String DEFAULT_TITLE = "SimpleGUI";
 
     /**
      * The default height of the window, in pixels.
      */
-    private final int defaultHeightInPixels = 500;
+    private final int DEFAULT_HEIGHT_IN_PIXELS = 500;
     /**
      * The default width of the window, in pixels.
      */
-    private final int defaultWidthInPixels = 500;
+    private final int DEFAULT_WIDTH_IN_PIXELS = 500;
 
     /**
      * The attached Menu, if added.
@@ -34,7 +34,7 @@ public class Window {
     /**
      * The attached Frames, if added.
      */
-    protected Frame frame;
+    private Frame frame;
 
     /**
      * Constructor.
@@ -42,8 +42,8 @@ public class Window {
      * Width and height is by default 500x500px.
      */
     public Window() {
-        this.window = new JFrame(defaultTitle);
-        window.setSize(defaultWidthInPixels, defaultHeightInPixels);
+        this.window = new JFrame(DEFAULT_TITLE);
+        window.setSize(DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
     }
@@ -56,7 +56,7 @@ public class Window {
      */
     public Window(String title) {
         this.window = new JFrame(title);
-        window.setSize(defaultWidthInPixels, defaultHeightInPixels);
+        window.setSize(DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
     }
@@ -69,7 +69,7 @@ public class Window {
      *
      */
     public Window(int heightInPixels, int widthInPixels) {
-        this.window = new JFrame(defaultTitle);
+        this.window = new JFrame(DEFAULT_TITLE);
         window.setSize(widthInPixels, heightInPixels);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
@@ -136,6 +136,7 @@ public class Window {
      * @return The Frame attached to the Window.
      */
     public Frame getFrame() {
+        //TODO: Add exception if null
         return frame;
     }
 
@@ -161,5 +162,13 @@ public class Window {
     private void setDefaultIcon() {
         ImageIcon icon = new ImageIcon("SG.png");
         window.setIconImage(icon.getImage());
+    }
+
+    JFrame getWindow() {
+        return window;
+    }
+
+    void setWindow(JFrame window) {
+        this.window = window;
     }
 }

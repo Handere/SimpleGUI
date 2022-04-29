@@ -27,7 +27,7 @@ public class Menu {
     public Menu(Window owner) {
         this.owner = owner;
         menu = new JMenuBar();
-        owner.window.setJMenuBar(menu);
+        owner.getWindow().setJMenuBar(menu);
     }
 
     /**

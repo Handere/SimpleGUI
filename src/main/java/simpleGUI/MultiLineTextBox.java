@@ -141,6 +141,6 @@ public class MultiLineTextBox {
             multiLineTextBoxPanel.add(multiLineTextBox);
         }
         owner.frame.add(multiLineTextBoxPanel);
-        owner.owner.window.pack();
+        owner.owner.getWindow().pack();
     }
 }
