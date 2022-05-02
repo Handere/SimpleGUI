@@ -1,13 +1,16 @@
 package simpleGUI;
 
+import jdk.jshell.spi.ExecutionControl;
+
 /**
- * Bread crumbs that can be attached to a NavigationBar.
+ * Bread crumbs.
  */
 public class BreadCrumbs {
 
     /**
-     * Constructor.
+     * Create bread crumbs.
      */
-    public BreadCrumbs() {
+    public BreadCrumbs() throws ExecutionControl.NotImplementedException {
+        throw new ExecutionControl.NotImplementedException("To be implemented...");
     }
 }

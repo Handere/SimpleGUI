@@ -1,5 +1,7 @@
 package simpleGUI;
 
+import jdk.jshell.spi.ExecutionControl;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -37,7 +39,7 @@ public class Menu {
      * Add bread crumbs to the menu.
      * @return Bread crumbs.
      */
-    public BreadCrumbs addBreadCrumbs() {
+    public BreadCrumbs addBreadCrumbs() throws ExecutionControl.NotImplementedException {
         return breadCrumbs = new BreadCrumbs();
     }
 
