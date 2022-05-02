@@ -5,29 +5,34 @@ import simpleGUI.scene.controls.Button;
 import javax.swing.*;
 
 /**
- * A button that is used to navigate between different windows.
+ * An event button.
  */
 public class MenuButton implements Button {
+
     /**
-     * The navigation bar the button is attached to.
+     * The owner menu of the menu button.
      */
     private Menu owner;
+
     /**
      * The menu button.
      */
     private JMenu menuButton;
+
     /**
      * The window the button will navigate to when clicked.
      */
     private Window targetWindow;
+
     /**
-     * The name of the button. Will be displayed.
+     * The default name of the button.
      */
     private final String DEFAULT_BUTTON_NAME = "Example";
 
     /**
-     * Constructor.
-     * @param owner The menu the button is attached to.
+     * Create a menu button, attached to a chosen menu.
+     * Default button name.
+     * @param owner The menu.
      */
     public MenuButton(Menu owner) {
         this.owner = owner;
@@ -36,9 +41,9 @@ public class MenuButton implements Button {
     }
 
     /**
-     * Constructor.
-     * @param owner The window the button will navigate to when clicked.
-     * @param buttonName The name of the button. Will be displayed.
+     * Create a menu button with a chosen button name, attached to a chosen menu.
+     * @param owner The menu.
+     * @param buttonName The name of the button.
      */
     public MenuButton(Menu owner, String buttonName) {
         this.owner = owner;
@@ -47,8 +52,8 @@ public class MenuButton implements Button {
     }
 
     /**
-     * Set the target of the button, to a new window.
-     * @param targetWindow The window the button will navigate to when clicked.
+     * Set the target window of the button.
+     * @param targetWindow The target window.
      */
     public void setTargetWindow(Window targetWindow) {
         this.targetWindow = targetWindow;
