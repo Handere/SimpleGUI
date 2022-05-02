@@ -11,24 +11,24 @@ public class EventButton implements Button {
     /**
      * The default name of the button.
      */
-    String defaultButtonName = "Click me";
+    private final String DEFAULT_BUTTON_NAME = "Click me";
     /**
      * The Frame the button is attached to.
      */
-    Frame owner;
+    private Frame owner;
     /**
      * The button.
      */
-    JButton button;
+    private JButton button;
 //TODO: Legg til funksjonalitet
     /**
      * The default width of the button.
      */
-    int defaultWidthInPixels = 100;
+    private final int DEFAULT_WIDTH_IN_PIXELS = 100;
     /**
      * The default height of the button.
      */
-    int defaultHeightInPixels = 50;
+    private final int DEFAULT_HEIGHT_IN_PIXELS = 50;
 
     /**
      * Constructor.
@@ -37,8 +37,8 @@ public class EventButton implements Button {
      */
     public EventButton(Frame owner) {
         this.owner = owner;
-        this.button = new JButton(defaultButtonName);
-        button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, defaultHeightInPixels);
+        this.button = new JButton(DEFAULT_BUTTON_NAME);
+        button.setBounds(button.getX(), button.getY(), DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
         owner.getFrame().add(button);
     }
 
@@ -50,7 +50,7 @@ public class EventButton implements Button {
     public EventButton(Frame owner, String buttonName) {
         this.owner = owner;
         this.button = new JButton(buttonName);
-        button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, defaultHeightInPixels);
+        button.setBounds(button.getX(), button.getY(), DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
         owner.getFrame().add(button);
     }
 
@@ -80,14 +80,14 @@ public class EventButton implements Button {
      * @param width The button width.
      */
     public void setWidthInPixels(int width) {
-        button.setBounds(button.getX(), button.getY(), width, defaultHeightInPixels);
+        button.setBounds(button.getX(), button.getY(), width, DEFAULT_HEIGHT_IN_PIXELS);
     }
 
     /**
      * @param height The button height.
      */
     public void setHeightInPixels(int height) {
-        button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, height);
+        button.setBounds(button.getX(), button.getY(), DEFAULT_WIDTH_IN_PIXELS, height);
     }
 
     /**

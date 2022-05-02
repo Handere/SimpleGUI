@@ -10,15 +10,15 @@ public class Menu {
     /**
      * The Window the Menu is attached to.
      */
-    Window owner;
+    private Window owner;
     /**
      * The menu.
      */
-    JMenuBar menu;
+    private JMenuBar menu;
     /**
      * The attached BreadCrumbs.
      */
-    BreadCrumbs breadCrumbs;
+    private BreadCrumbs breadCrumbs;
 
     /**
      * Constructor.
@@ -55,4 +55,7 @@ public class Menu {
         return new MenuButton(this, buttonName);
     }
 
+    public JMenuBar getMenu() {
+        return menu;
+    }
 }

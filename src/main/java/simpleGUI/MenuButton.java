@@ -32,7 +32,7 @@ public class MenuButton implements Button {
     public MenuButton(Menu owner) {
         this.owner = owner;
         menuButton = new JMenu(DEFAULT_BUTTON_NAME);
-        owner.menu.add(menuButton);
+        owner.getMenu().add(menuButton);
     }
 
     /**
@@ -43,7 +43,7 @@ public class MenuButton implements Button {
     public MenuButton(Menu owner, String buttonName) {
         this.owner = owner;
         menuButton = new JMenu(buttonName);
-        owner.menu.add(menuButton);
+        owner.getMenu().add(menuButton);
     }
 
     /**
