@@ -9,12 +9,12 @@ import javax.swing.*;
 public class Window {
 
     /**
-     * The GUI window.
+     * The window.
      */
     private JFrame window;
 
     /**
-     * The default title of the Window.
+     * The default title of the window.
      */
     private final String DEFAULT_TITLE = "SimpleGUI";
 
@@ -22,24 +22,25 @@ public class Window {
      * The default height of the window, in pixels.
      */
     private final int DEFAULT_HEIGHT_IN_PIXELS = 500;
+
     /**
      * The default width of the window, in pixels.
      */
     private final int DEFAULT_WIDTH_IN_PIXELS = 500;
 
     /**
-     * The attached Menu, if added.
+     * The attached menu, if added.
      */
     private Menu menu;
+
     /**
-     * The attached Frames, if added.
+     * The attached frame, if added.
      */
     private Frame frame;
 
     /**
-     * Constructor.
-     * Create an empty window without a Frame.
-     * Width and height is by default 500x500px.
+     * Create an empty window.
+     * Width and height is by default 500x500px, and default title.
      */
     public Window() {
         this.window = new JFrame(DEFAULT_TITLE);
@@ -49,10 +50,9 @@ public class Window {
     }
 
     /**
-     * Constructor.
-     * Create an empty window without a Frame.
+     * Create an empty window with a chosen title.
      * Width and height is by default 500x500px.
-     * @param title The window title.
+     * @param title The title of the window.
      */
     public Window(String title) {
         this.window = new JFrame(title);
@@ -62,11 +62,10 @@ public class Window {
     }
 
     /**
-     * Constructor.
-     * Create an empty window without a Frame.
-     * @param heightInPixels Set the height of the window in pixels.
-     * @param widthInPixels Set the width of the window in pixels.
-     *
+     * Create an empty window with chosen height and width.
+     * Default title.
+     * @param heightInPixels The height of the window in pixels.
+     * @param widthInPixels The width of the window in pixels.
      */
     public Window(int heightInPixels, int widthInPixels) {
         this.window = new JFrame(DEFAULT_TITLE);
@@ -76,12 +75,10 @@ public class Window {
     }
 
     /**
-     * Constructor.
-     * Create an empty window without a Frame.
-     * @param title Set the title of the window.
-     * @param heightInPixels Set the height of the window in pixels.
-     * @param widthInPixels Set the width of the window in pixels.
-     *
+     * Create an empty window with a chosen title, height and width.
+     * @param title The title of the window.
+     * @param heightInPixels The height of the window in pixels.
+     * @param widthInPixels The width of the window in pixels.
      */
     public Window(String title, int heightInPixels, int widthInPixels) {
         this.window = new JFrame(title);
@@ -92,7 +89,7 @@ public class Window {
 
     /**
      * Set the window height.
-     * @param heightInPixels Set the height of the window in pixels.
+     * @param heightInPixels The height of the window in pixels.
      */
     public void setHeight(int heightInPixels) {
         window.setSize(window.getWidth(), heightInPixels);
@@ -100,7 +97,7 @@ public class Window {
 
     /**
      * Set the window width.
-     * @param widthInPixels Set the width of the window in pixels.
+     * @param widthInPixels The width of the window in pixels.
      */
     public void setWidth(int widthInPixels){
         window.setSize(widthInPixels, window.getHeight());
@@ -108,8 +105,8 @@ public class Window {
 
     /**
      * Set the window width and height.
-     * @param widthInPixels Set the width of the window in pixels.
-     * @param heightInPixels Set the height of the window in pixels.
+     * @param widthInPixels The width of the window in pixels.
+     * @param heightInPixels The height of the window in pixels.
      */
     public void setSize(int widthInPixels, int heightInPixels){
         window.setSize(widthInPixels, heightInPixels);
@@ -123,18 +120,16 @@ public class Window {
     }
 
     /**
-     * Add a new frame to the window, to a maximum of four frames.
-     * When a second frame is added it will split the available space vertical, and place itself to the right of the
-     * first. Third is placed on the bottom, and fourth will split the bottom and place itself bottom right.
-     * @return new Frame
+     * Add a frame to the window.
+     * @return The frame
      */
     public Frame addFrame(){
         return frame = new Frame(this);
     }
 
     /**
-     * @return The Frame attached to the Window.
-     * @throws NullPointerException - if no Frame is added
+     * @return The frame.
+     * @throws NullPointerException If no frame is added
      */
     public Frame getFrame() throws NullPointerException {
         if (frame == null) {
@@ -146,17 +141,16 @@ public class Window {
     }
 
     /**
-     * Add a Menu to the window that by default is placed horizontal at the top of the window.
-     * @return new Menu
+     * Add a menu to the window that is placed horizontal at the top of the window.
+     * @return The menu
      */
     public Menu addMenu(){
         return menu = new Menu(this);
     }
 
     /**
-     * Return the Menu attached to the window.
-     * @return Menu
-     * @throws NullPointerException - if no Menu is added
+     * @return The menu
+     * @throws NullPointerException If no menu is added
      */
     public Menu getMenu() throws NullPointerException{
         if (menu == null) {
@@ -175,11 +169,10 @@ public class Window {
         window.setIconImage(icon.getImage());
     }
 
+    /**
+     * @return The window.
+     */
     JFrame getWindow() {
         return window;
-    }
-
-    void setWindow(JFrame window) {
-        this.window = window;
     }
 }
