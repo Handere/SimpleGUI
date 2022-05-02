@@ -12,42 +12,42 @@ public class MultiLineTextBox {
     /**
      * The default text content of the MultiLineTextBox. Will be displayed.
      */
-    String defaultText = "This is a text box.";
+    private final String DEFAULT_TEXT = "This is a text box.";
 
     /**
      * The default border title. Will be displayed.
      */
-    String defaultBorderTitle = "Border title";
+    private final String DEFAULT_TEXT_BOX_BORDER_TITLE = "Text box border title";
 
     /**
      * The default number of rows the MultiLineTextBox have.
      */
-    int defaultNumberOfRows = 15;
+    private final int DEFAULT_NUMBER_OF_ROWS = 15;
 
     /**
      * The default number of columns the MultiLineTextBox have.
      */
-    int defaultNumberOfColumns = 60;
+    private final int DEFAULT_NUMBER_OF_COLUMNS = 60;
 
     /**
      * The Frame the MultiLineTextBox is attached to.
      */
-    Frame owner;
+    private Frame owner;
 
     /**
      * The MultiLineTextBox.
      */
-    JTextArea multiLineTextBox;
+    private JTextArea multiLineTextBox;
 
     /**
      * The container holding the MultiLineTextBox.
      */
-    JPanel multiLineTextBoxPanel = new JPanel();
+    private JPanel multiLineTextBoxPanel = new JPanel();
 
     /**
      * A vertical (always show) and horizontal (if needed) scrollbar, if added.
      */
-    JScrollPane scrollbar;
+    private JScrollPane scrollbar;
 
     /**
      * Constructor.
@@ -56,8 +56,8 @@ public class MultiLineTextBox {
      */
     public MultiLineTextBox(Frame owner, boolean addScrollbar) {
         this.owner = owner;
-        this.multiLineTextBox = new JTextArea(defaultNumberOfRows,defaultNumberOfColumns);
-        buildMultiLineTextBox(addScrollbar, defaultBorderTitle, defaultText);
+        this.multiLineTextBox = new JTextArea(DEFAULT_NUMBER_OF_ROWS, DEFAULT_NUMBER_OF_COLUMNS);
+        buildMultiLineTextBox(addScrollbar, DEFAULT_TEXT_BOX_BORDER_TITLE, DEFAULT_TEXT);
     }
 
     /**
@@ -67,9 +67,9 @@ public class MultiLineTextBox {
      */
     public MultiLineTextBox(Frame owner, String text) {
         this.owner = owner;
-        this.multiLineTextBox = new JTextArea(text, defaultNumberOfRows,defaultNumberOfColumns);
+        this.multiLineTextBox = new JTextArea(text, DEFAULT_NUMBER_OF_ROWS, DEFAULT_NUMBER_OF_COLUMNS);
         boolean addScrollbar = false;
-        buildMultiLineTextBox(addScrollbar, defaultBorderTitle, text);
+        buildMultiLineTextBox(addScrollbar, DEFAULT_TEXT_BOX_BORDER_TITLE, text);
     }
 
     /**
@@ -80,8 +80,8 @@ public class MultiLineTextBox {
      */
     public MultiLineTextBox(Frame owner, String text, boolean addScrollbar) {
         this.owner = owner;
-        this.multiLineTextBox = new JTextArea(text, defaultNumberOfRows, defaultNumberOfColumns);
-        buildMultiLineTextBox(addScrollbar, defaultBorderTitle, text);
+        this.multiLineTextBox = new JTextArea(text, DEFAULT_NUMBER_OF_ROWS, DEFAULT_NUMBER_OF_COLUMNS);
+        buildMultiLineTextBox(addScrollbar, DEFAULT_TEXT_BOX_BORDER_TITLE, text);
     }
 
     /**
@@ -89,12 +89,12 @@ public class MultiLineTextBox {
      * @param owner The frame the MultiLineTextBox is attached to.
      * @param text The text content in the MultiLineTextBox.
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
-     * @param borderTitle The title of the border.
+     * @param textBoxBorderTitle The title of the border.
      */
-    public MultiLineTextBox(Frame owner, String text, boolean addScrollbar, String borderTitle) {
+    public MultiLineTextBox(Frame owner, String text, boolean addScrollbar, String textBoxBorderTitle) {
         this.owner = owner;
-        this.multiLineTextBox = new JTextArea(text, defaultNumberOfRows, defaultNumberOfColumns);
-        buildMultiLineTextBox(addScrollbar, borderTitle, text);
+        this.multiLineTextBox = new JTextArea(text, DEFAULT_NUMBER_OF_ROWS, DEFAULT_NUMBER_OF_COLUMNS);
+        buildMultiLineTextBox(addScrollbar, textBoxBorderTitle, text);
     }
 
     /**
@@ -140,7 +140,7 @@ public class MultiLineTextBox {
 
             multiLineTextBoxPanel.add(multiLineTextBox);
         }
-        owner.frame.add(multiLineTextBoxPanel);
-        owner.owner.getWindow().pack();
+        owner.getFrame().add(multiLineTextBoxPanel);
+        owner.getOwner().getWindow().pack();
     }
 }

@@ -11,19 +11,19 @@ public class MenuButton implements Button {
     /**
      * The navigation bar the button is attached to.
      */
-    Menu owner;
+    private Menu owner;
     /**
      * The menu button.
      */
-    JMenu menuButton;
+    private JMenu menuButton;
     /**
      * The window the button will navigate to when clicked.
      */
-    Window targetWindow;
+    private Window targetWindow;
     /**
      * The name of the button. Will be displayed.
      */
-    String defaultButtonName = "Example";
+    private final String DEFAULT_BUTTON_NAME = "Example";
 
     /**
      * Constructor.
@@ -31,7 +31,7 @@ public class MenuButton implements Button {
      */
     public MenuButton(Menu owner) {
         this.owner = owner;
-        menuButton = new JMenu(defaultButtonName);
+        menuButton = new JMenu(DEFAULT_BUTTON_NAME);
         owner.menu.add(menuButton);
     }
 
@@ -52,13 +52,5 @@ public class MenuButton implements Button {
      */
     public void setTargetWindow(Window targetWindow) {
         this.targetWindow = targetWindow;
-    }
-
-    /**
-     * Set the name of the button.
-     * @param buttonName The name of the button. Will be displayed.
-     */
-    public void setDefaultButtonName(String buttonName) {
-        menuButton.setText(buttonName);
     }
 }

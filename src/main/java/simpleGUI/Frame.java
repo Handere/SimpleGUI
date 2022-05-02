@@ -12,11 +12,11 @@ public class Frame {
     /**
      * The Window the Frame is attached to.
      */
-    Window owner;
+    private Window owner;
     /**
      * The frame.
      */
-    Container frame;
+    private Container frame;
 
     /**
      * Constructor.
@@ -30,31 +30,31 @@ public class Frame {
     }
 
     /**
-     * Add an ActionButton to the Frame, with a default name.
-     * @return new ActionButton
+     * Add an EventButton to the Frame, with a default name.
+     * @return new EventButton
      */
-    public ActionButton addActionButton(){
-        return new ActionButton(this);
+    public EventButton addEventButton(){
+        return new EventButton(this);
     }
 
     /**
-     * Add an ActionButton to the Frame.
+     * Add an EventButton to the Frame.
      * @param buttonName The name of the button. Will be displayed.
      * @return new ActionButton
      */
-    public ActionButton addActionButton(String buttonName){
-        return new ActionButton(this, buttonName);
+    public EventButton addEventButton(String buttonName){
+        return new EventButton(this, buttonName);
     }
 
     /**
-     * Add an ActionButton to the Frame.
+     * Add an EventButton to the Frame.
      * @param buttonName The name of the button. Will be displayed.
      * @param width The button width.
      * @param height The button height.
-     * @return new ActionButton
+     * @return new EventButton
      */
-    public ActionButton addActionButton(String buttonName, int width, int height){
-        return new ActionButton(this, buttonName, width, height);
+    public EventButton addEventButton(String buttonName, int width, int height){
+        return new EventButton(this, buttonName, width, height);
     }
 
     /**
@@ -113,5 +113,11 @@ public class Frame {
         return new MultiLineTextBox(this, content, addScrollbar, borderTitle);
     }
 
+    Window getOwner() {
+        return owner;
+    }
 
+    Container getFrame() {
+        return frame;
+    }
 }

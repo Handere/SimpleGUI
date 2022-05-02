@@ -11,26 +11,26 @@ public class SingleLineTextLabel {
     /**
      * The default text when the user don't enter it when the SingleLineTextLabel is created
      */
-    String defaultText = "Remember to add text";
+    private final String DEFAULT_TEXT = "Remember to add text";
 
     /**
      * The Frame the Label is attached to.
      */
-    Frame owner;
+    private Frame owner;
 
     /**
      * The SingleLineTextLabel
      */
-    JLabel singleLineTextLabel;
+    private JLabel singleLineTextLabel;
 
     /**
      * Constructor.
      * @param owner The Frame the Label is attached to.
      */
     public SingleLineTextLabel(Frame owner) {
-        this.singleLineTextLabel = new JLabel(defaultText);
+        this.singleLineTextLabel = new JLabel(DEFAULT_TEXT);
         this.owner = owner;
-        owner.frame.add(singleLineTextLabel);
+        owner.getFrame().add(singleLineTextLabel);
     }
 
     /**
@@ -41,7 +41,7 @@ public class SingleLineTextLabel {
     public SingleLineTextLabel(Frame owner, String singleLineText) {
         this.singleLineTextLabel = new JLabel(singleLineText);
         this.owner = owner;
-        owner.frame.add(singleLineTextLabel);
+        owner.getFrame().add(singleLineTextLabel);
     }
 
     /**

@@ -7,7 +7,7 @@ import javax.swing.*;
 /**
  * A button that can be added to a Frame, with the desired action.
  */
-public class ActionButton implements Button {
+public class EventButton implements Button {
     /**
      * The default name of the button.
      */
@@ -20,7 +20,7 @@ public class ActionButton implements Button {
      * The button.
      */
     JButton button;
-
+//TODO: Legg til funksjonalitet
     /**
      * The default width of the button.
      */
@@ -35,11 +35,11 @@ public class ActionButton implements Button {
      * Create an ActionButton with default name.
      * @param owner The Frame the button is attached to.
      */
-    public ActionButton(Frame owner) {
+    public EventButton(Frame owner) {
         this.owner = owner;
         this.button = new JButton(defaultButtonName);
         button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, defaultHeightInPixels);
-        owner.frame.add(button);
+        owner.getFrame().add(button);
     }
 
     /**
@@ -47,11 +47,11 @@ public class ActionButton implements Button {
      * @param owner The Frame the button is attached to.
      * @param buttonName The name of the button. Will be displayed.
      */
-    public ActionButton(Frame owner, String buttonName) {
+    public EventButton(Frame owner, String buttonName) {
         this.owner = owner;
         this.button = new JButton(buttonName);
         button.setBounds(button.getX(), button.getY(), defaultWidthInPixels, defaultHeightInPixels);
-        owner.frame.add(button);
+        owner.getFrame().add(button);
     }
 
     /**
@@ -61,11 +61,11 @@ public class ActionButton implements Button {
      * @param width The button width.
      * @param height The button height.
      */
-    public ActionButton(Frame owner, String buttonName, int width, int height) {
+    public EventButton(Frame owner, String buttonName, int width, int height) {
         this.owner = owner;
         this.button = new JButton(buttonName);
         button.setBounds(button.getX(), button.getY(), width, height);
-        owner.frame.add(button);
+        owner.getFrame().add(button);
     }
 
     /**

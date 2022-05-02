@@ -134,10 +134,15 @@ public class Window {
 
     /**
      * @return The Frame attached to the Window.
+     * @throws NullPointerException - if no Frame is added
      */
-    public Frame getFrame() {
-        //TODO: Add exception if null
-        return frame;
+    public Frame getFrame() throws NullPointerException {
+        if (frame == null) {
+            throw new NullPointerException("No Frame added.");
+        }
+        else {
+            return frame;
+        }
     }
 
     /**
@@ -151,9 +156,15 @@ public class Window {
     /**
      * Return the Menu attached to the window.
      * @return Menu
+     * @throws NullPointerException - if no Menu is added
      */
-    public Menu getMenu(){
-        return menu;
+    public Menu getMenu() throws NullPointerException{
+        if (menu == null) {
+            throw new NullPointerException("No Menu added.");
+        }
+        else {
+            return menu;
+        }
     }
 
     /**
