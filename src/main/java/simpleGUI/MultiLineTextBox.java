@@ -5,42 +5,42 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
 /**
- * A text box module that can be attached to a Frame.
+ * A multi line text box.
  */
 public class MultiLineTextBox {
 
     /**
-     * The default text content of the MultiLineTextBox. Will be displayed.
+     * The default text of the multi line text box.
      */
     private final String DEFAULT_TEXT = "This is a text box.";
 
     /**
-     * The default border title. Will be displayed.
+     * The default border title of the multi line text box.
      */
     private final String DEFAULT_TEXT_BOX_BORDER_TITLE = "Text box border title";
 
     /**
-     * The default number of rows the MultiLineTextBox have.
+     * The default number of rows of the multi line text box.
      */
     private final int DEFAULT_NUMBER_OF_ROWS = 15;
 
     /**
-     * The default number of columns the MultiLineTextBox have.
+     * The default number of columns of the multi line text box.
      */
     private final int DEFAULT_NUMBER_OF_COLUMNS = 60;
 
     /**
-     * The Frame the MultiLineTextBox is attached to.
+     * The owner frame of the multi line text box.
      */
     private Frame owner;
 
     /**
-     * The MultiLineTextBox.
+     * The multi line text box.
      */
     private JTextArea multiLineTextBox;
 
     /**
-     * The container holding the MultiLineTextBox.
+     * The container holding the multi line text box.
      */
     private JPanel multiLineTextBoxPanel = new JPanel();
 
@@ -50,8 +50,9 @@ public class MultiLineTextBox {
     private JScrollPane scrollbar;
 
     /**
-     * Constructor.
-     * @param owner The Frame the MultiLineTextBox is attached to.
+     * Create a multi line text box with a scrollbar (if true), attached to a chosen frame.
+     * Default border title.
+     * @param owner The frame.
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      */
     public MultiLineTextBox(Frame owner, boolean addScrollbar) {
@@ -61,9 +62,10 @@ public class MultiLineTextBox {
     }
 
     /**
-     * Constructor.
-     * @param owner The Frame the MultiLineTextBox is attached to.
-     * @param text The text content
+     * Create a multi line text box with a chosen text, attached to a chosen frame.
+     * Default border title.
+     * @param owner The frame.
+     * @param text The text content.
      */
     public MultiLineTextBox(Frame owner, String text) {
         this.owner = owner;
@@ -73,9 +75,10 @@ public class MultiLineTextBox {
     }
 
     /**
-     * The Constructor
-     * @param owner The frame the MultiLineTextBox is attached to.
-     * @param text The text content in the MultiLineTextBox.
+     * Create a multi line text box with a chosen text, a scrollbar (if true), attached to a chosen frame.
+     * Default border title.
+     * @param owner The frame.
+     * @param text The text content.
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      */
     public MultiLineTextBox(Frame owner, String text, boolean addScrollbar) {
@@ -85,9 +88,9 @@ public class MultiLineTextBox {
     }
 
     /**
-     * The Constructor
-     * @param owner The frame the MultiLineTextBox is attached to.
-     * @param text The text content in the MultiLineTextBox.
+     * Create a multi line text box with a chosen text, a scrollbar (if true), a border title, attached to a chosen frame.
+     * @param owner The frame.
+     * @param text The text content.
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      * @param textBoxBorderTitle The title of the border.
      */
@@ -98,26 +101,26 @@ public class MultiLineTextBox {
     }
 
     /**
-     * Set a new content to the MultiLineTextBox.
-     * @param text The text content of the MultiLineTextBox. Will be displayed.
+     * Set the text content of the multi line text box.
+     * @param text The text content.
      */
     public void setText(String text) {
         multiLineTextBox.setText(text);
     }
 
     /**
-     * Setting the size of the MultiLineTextBox
+     * Set the size of the multi line text box
      * @param x X-coordinate for top left corner.
      * @param y Y-coordinate for top left corner.
-     * @param width The width of the MultiLineTextBox.
-     * @param height The height of the MultiLineTextBox.
+     * @param width The width of the multi line text box.
+     * @param height The height of the multi line text box.
      */
     public void setSize(int x, int y, int width, int height) {
         multiLineTextBox.setBounds(x, y, width, height);
     }
 
     /**
-     * Add a scrollbar to the MultiLineTextBox.
+     * Add a scrollbar to the multi line text box.
      */
     private void addScrollbar() {
         scrollbar = new JScrollPane(multiLineTextBox);
@@ -125,7 +128,7 @@ public class MultiLineTextBox {
     }
 
     /**
-     * Build the MultiLineText box as spesified.
+     * Build the multi line text box as specified.
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      * @param borderTitle The title of the border.
      */
