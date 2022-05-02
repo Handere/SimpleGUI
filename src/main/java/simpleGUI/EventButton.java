@@ -5,35 +5,40 @@ import simpleGUI.scene.controls.Button;
 import javax.swing.*;
 
 /**
- * A button that can be added to a Frame, with the desired action.
+ * An event button.
  */
 public class EventButton implements Button {
+
     /**
-     * The default name of the button.
+     * The default name of the event button.
      */
     private final String DEFAULT_BUTTON_NAME = "Click me";
+
     /**
-     * The Frame the button is attached to.
+     * The owner frame of the event button.
      */
     private Frame owner;
+
     /**
-     * The button.
+     * The event button.
      */
     private JButton button;
 //TODO: Legg til funksjonalitet
+
     /**
-     * The default width of the button.
+     * The default width of the event button.
      */
     private final int DEFAULT_WIDTH_IN_PIXELS = 100;
+
     /**
-     * The default height of the button.
+     * The default height of the event button.
      */
     private final int DEFAULT_HEIGHT_IN_PIXELS = 50;
 
     /**
-     * Constructor.
-     * Create an ActionButton with default name.
-     * @param owner The Frame the button is attached to.
+     * Create an event button, attached to a chosen frame.
+     * Default button name.
+     * @param owner The frame.
      */
     public EventButton(Frame owner) {
         this.owner = owner;
@@ -43,9 +48,9 @@ public class EventButton implements Button {
     }
 
     /**
-     * Constructor.
-     * @param owner The Frame the button is attached to.
-     * @param buttonName The name of the button. Will be displayed.
+     * Create an event button with a chosen button name, attached to a chosen frame.
+     * @param owner The frame.
+     * @param buttonName The name of the button.
      */
     public EventButton(Frame owner, String buttonName) {
         this.owner = owner;
@@ -55,9 +60,9 @@ public class EventButton implements Button {
     }
 
     /**
-     * Constructor.
-     * @param owner The Frame the button is attached to.
-     * @param buttonName The name of the button. Will be displayed.
+     * Create an event button with a chosen button name, width and height, attached to a chosen frame.
+     * @param owner The frame.
+     * @param buttonName The name of the button.
      * @param width The button width.
      * @param height The button height.
      */
@@ -69,14 +74,15 @@ public class EventButton implements Button {
     }
 
     /**
-     * Set the name of the button.
-     * @param buttonName The name of the button. Will be displayed.
+     * Set the name of the event button.
+     * @param buttonName The name of the event button.
      */
     public void setButtonName(String buttonName) {
         button.setName(buttonName);
     }
 
     /**
+     * Set the width of the event button.
      * @param width The button width.
      */
     public void setWidthInPixels(int width) {
@@ -84,6 +90,7 @@ public class EventButton implements Button {
     }
 
     /**
+     * Set the height of the event button.
      * @param height The button height.
      */
     public void setHeightInPixels(int height) {
@@ -91,11 +98,11 @@ public class EventButton implements Button {
     }
 
     /**
-     * Set the size of the ActionButton.
+     * Set the size of the event button.
      * @param x X-coordinate for top left corner.
      * @param y Y-coordinate for top left corner.
-     * @param width The width of the button.
-     * @param height The height of the button.
+     * @param width The width of the event button.
+     * @param height The height of the event button.
      */
     public void setSize(int x, int y, int width, int height) {
         button.setBounds(x, y, width, height);
