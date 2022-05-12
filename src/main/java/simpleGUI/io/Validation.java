@@ -1,7 +1,8 @@
 package simpleGUI.io;
 
 /**
- * Hold methods for validating data.
+ * The validator.
  */
 public class Validation {
+    //TODO: Remove this class?
 }
