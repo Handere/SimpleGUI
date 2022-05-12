@@ -3,79 +3,57 @@ package simpleGUI.media;
 import simpleGUI.Frame;
 
 /**
- * A music player that can be attached to a Frame.
+ * The music player
  */
 public class MusicPlayer {
 
     /**
-     * The Frame that hold the MusicPlayer.
+     * The owner frame og the music player.
      */
     Frame owner;
+
     /**
      * The filepath to the source file.
      */
     String source;
-    /**
-     * The height of the MusicPlayer in pixels.
-     */
-    int heightInPixels;
-    /**
-     * The width of the MusicPlayer in pixels.
-     */
-    int widthInPixels;
 
     /**
-     * Define if the MusicPlayer is currently playing music.
+     * The default height, in pixels.
+     */
+    private final int HEIGHT_IN_PIXELS = 100;
+
+    /**
+     * The default width, in pixels.
+     */
+    private final int WIDTH_IN_PIXELS = 150;
+
+    /**
+     * Define if the music player is currently playing music.
      */
     boolean playing = false;
 
     /**
-     * Constructor.
-     * Create an empty MusicPlayer that is not connected to an owner frame, and do not have a size.
+     * Create an empty music player that is not connected to an owner frame.
+     * Default height and width.
      */
     public MusicPlayer() {
     }
 
     /**
-     * Constructor.
-     * Setting the height to 100px and width to 150px by default.
-     * @param owner The Frame that hold the MusicPlayer.
+     * Create an empty music player attached to a chosen frame.
+     * @param owner The frame the music player is attached to.
      * @param source The filepath to the source file.
      */
     public MusicPlayer(Frame owner, String source) {
         this.owner = owner;
         this.source = source;
-        heightInPixels = 100;
-        widthInPixels = 150;
     }
 
     /**
-     * Constructor.
-     * @param owner The Frame that hold the MusicPlayer.
-     * @param source The filepath to the source file.
-     * @param heightInPixels The height of the MusicPlayer in pixels.
-     * @param widthInPixels The width of the MusicPlayer in pixels.
-     */
-    public MusicPlayer(Frame owner, String source, int heightInPixels, int widthInPixels) {
-        this.owner = owner;
-        this.source = source;
-        this.heightInPixels = heightInPixels;
-        this.widthInPixels = widthInPixels;
-    }
-
-    /**
-     * @return The Frame that hold the MusicPlayer.
+     * @return The frame that hold the music player.
      */
     public Frame getOwner() {
         return owner;
-    }
-
-    /**
-     * Connect the MusicPlayer to a Frame owner, making it display in the Frame.
-     * @param owner The Frame that hold the MusicPlayer.
-     */
-    public void setOwner(Frame owner) {
-        this.owner = owner;
     }
 
     /**
@@ -93,42 +71,14 @@ public class MusicPlayer {
     }
 
     /**
-     * @return The height of the MusicPlayer in pixels.
-     */
-    public int getHeightInPixels() {
-        return heightInPixels;
-    }
-
-    /**
-     * @param heightInPixels The height of the MusicPlayer in pixels.
-     */
-    public void setHeightInPixels(int heightInPixels) {
-        this.heightInPixels = heightInPixels;
-    }
-
-    /**
-     * @return The width of the MusicPlayer in pixels.
-     */
-    public int getWidthInPixels() {
-        return widthInPixels;
-    }
-
-    /**
-     * @param widthInPixels The width of the MusicPlayer in pixels.
-     */
-    public void setWidthInPixels(int widthInPixels) {
-        this.widthInPixels = widthInPixels;
-    }
-
-    /**
-     * @return Define if the MusicPlayer is currently playing music.
+     * @return Define if the music player is currently playing music.
      */
     public boolean isPlaying() {
         return playing;
     }
 
     /**
-     * @param playing Define if the MusicPlayer is currently playing music.
+     * @param playing Define if the music player is currently playing music.
      */
     public void setPlaying(boolean playing) {
         this.playing = playing;
