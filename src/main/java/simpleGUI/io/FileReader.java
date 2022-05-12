@@ -3,29 +3,29 @@ package simpleGUI.io;
 import java.util.HashMap;
 
 /**
- * Hold methods to read and write to file.
+ * The file reader.
  */
 public class FileReader {
 
     /**
-     * Constructor.
+     * Create a file reader.
      */
     public FileReader() {
     }
 
     /**
-     * Read a JSON file. Return the content as a HashMap.
+     * Read a JSON file.
      * @param filePath The filepath to the desired file.
-     * @return new HashMap
+     * @return The content as a HashMap.
      */
     public HashMap<String, Object> readJsonFile(String filePath) {
         return new HashMap<>();
     }
 
     /**
-     * Read a CSV file. Return the content as a HashMap.
+     * Read a CSV file.
      * @param filePath The filepath to the desired file.
-     * @return new HashMap
+     * @return The content as a HashMap.
      */
     public HashMap<String, Object> readCSVFile(String filePath){
         return new HashMap<>();
