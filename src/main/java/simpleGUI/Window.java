@@ -44,7 +44,7 @@ public class Window {
      */
     public Window() {
         this.window = new JFrame(DEFAULT_TITLE);
-        window.setSize(DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
+        setSize(DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
     }
@@ -56,7 +56,7 @@ public class Window {
      */
     public Window(String title) {
         this.window = new JFrame(title);
-        window.setSize(DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
+        setSize(DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
     }
@@ -69,7 +69,7 @@ public class Window {
      */
     public Window(int heightInPixels, int widthInPixels) {
         this.window = new JFrame(DEFAULT_TITLE);
-        window.setSize(widthInPixels, heightInPixels);
+        setSize(widthInPixels, heightInPixels);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
     }
@@ -82,7 +82,7 @@ public class Window {
      */
     public Window(String title, int heightInPixels, int widthInPixels) {
         this.window = new JFrame(title);
-        window.setSize(widthInPixels, heightInPixels);
+        setSize(widthInPixels, heightInPixels);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
     }
