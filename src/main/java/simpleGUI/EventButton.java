@@ -1,7 +1,5 @@
 package simpleGUI;
 
-import simpleGUI.scene.controls.Button;
-
 import javax.swing.*;
 
 /**
@@ -23,7 +21,8 @@ public class EventButton implements Button {
      * The event button.
      */
     private JButton button;
-//TODO: Legg til funksjonalitet
+
+    //TODO: Legg til Action funksjonalitet
 
     /**
      * The default width of the event button.

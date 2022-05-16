@@ -38,6 +38,7 @@ public class Menu {
     /**
      * Add bread crumbs to the menu.
      * @return Bread crumbs.
+     * @throws ExecutionControl.NotImplementedException Not implemented.
      */
     public BreadCrumbs addBreadCrumbs() throws ExecutionControl.NotImplementedException {
         return breadCrumbs = new BreadCrumbs();

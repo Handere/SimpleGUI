@@ -9,8 +9,9 @@ public class BreadCrumbs {
 
     /**
      * Create bread crumbs.
+     * @throws ExecutionControl.NotImplementedException Not implemented.
      */
-    public BreadCrumbs() throws ExecutionControl.NotImplementedException {
+    BreadCrumbs() throws ExecutionControl.NotImplementedException {
         throw new ExecutionControl.NotImplementedException("To be implemented...");
     }
 }

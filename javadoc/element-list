@@ -1,7 +1,3 @@
 simpleGUI
 simpleGUI.io
-simpleGUI.media
-simpleGUI.scene.controls
-simpleGUI.scene.module
-simpleGUI.scene.module.calender
-simpleGUI.scene.module.form
+simpleGUI.utilities

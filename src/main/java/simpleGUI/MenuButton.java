@@ -1,7 +1,5 @@
 package simpleGUI;
 
-import simpleGUI.scene.controls.Button;
-
 import javax.swing.*;
 
 /**
