@@ -9,24 +9,9 @@ import javax.swing.*;
 public class Window {
 
     /**
-     * The window.
+     * The internal window.
      */
     private JFrame window;
-
-    /**
-     * The default title of the window.
-     */
-    private final String DEFAULT_TITLE = "SimpleGUI";
-
-    /**
-     * The default height of the window, in pixels.
-     */
-    private final int DEFAULT_HEIGHT_IN_PIXELS = 500;
-
-    /**
-     * The default width of the window, in pixels.
-     */
-    private final int DEFAULT_WIDTH_IN_PIXELS = 500;
 
     /**
      * The attached menu, if added.
@@ -39,52 +24,62 @@ public class Window {
     private Frame frame;
 
     /**
-     * Create an empty window.
-     * Width and height is by default 500x500px, and default title.
+     * The window builder.
      */
-    public Window() {
-        this.window = new JFrame(DEFAULT_TITLE);
-        setSize(DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
-        window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
-        setDefaultIcon();
+    public static class WindowBuilder {
+        private String title = "SimpleGUI";
+        private int height = 500;
+        private int width = 600;
+        private Frame frame;
+
+        /**
+         * Build a window.
+         */
+        public WindowBuilder() {
+
+        }
+
+        /**
+         * Add a custom title.
+         * @param title The window title.
+         * @return {@link WindowBuilder}
+         */
+        public WindowBuilder withCustomTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+        /**
+         * Add custom with and height.
+         * @param heightInPixels The window height.
+         * @param widthInPixels The window width.
+         * @return {@link WindowBuilder}
+         */
+        public WindowBuilder withCustomSize(int heightInPixels, int widthInPixels) {
+            this.height = heightInPixels;
+            this.width = widthInPixels;
+            return this;
+        }
+
+        /**
+         * Build the window with specified options.
+         * @return {@link WindowBuilder}
+         */
+        public  Window build() {
+            return new Window(this);
+        }
     }
 
     /**
-     * Create an empty window with a chosen title.
-     * Width and height is by default 500x500px.
-     * @param title The title of the window.
+     * Build a window with specified options.
+     * @param windowBuilder {@link WindowBuilder}
      */
-    public Window(String title) {
-        this.window = new JFrame(title);
-        setSize(DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
+    public Window(WindowBuilder windowBuilder) {
+        this.window = new JFrame(windowBuilder.title);
+        setSize(windowBuilder.width, windowBuilder.height);
         window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
-    }
-
-    /**
-     * Create an empty window with chosen height and width.
-     * Default title.
-     * @param heightInPixels The height of the window in pixels.
-     * @param widthInPixels The width of the window in pixels.
-     */
-    public Window(int heightInPixels, int widthInPixels) {
-        this.window = new JFrame(DEFAULT_TITLE);
-        setSize(widthInPixels, heightInPixels);
-        window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
-        setDefaultIcon();
-    }
-
-    /**
-     * Create an empty window with a chosen title, height and width.
-     * @param title The title of the window.
-     * @param heightInPixels The height of the window in pixels.
-     * @param widthInPixels The width of the window in pixels.
-     */
-    public Window(String title, int heightInPixels, int widthInPixels) {
-        this.window = new JFrame(title);
-        setSize(widthInPixels, heightInPixels);
-        window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
-        setDefaultIcon();
+        build();
     }
 
     /**
@@ -121,14 +116,14 @@ public class Window {
 
     /**
      * Add a frame to the window.
-     * @return The frame
+     * @return {@link Frame}
      */
     public Frame addFrame(){
         return frame = new Frame(this);
     }
 
     /**
-     * @return The frame.
+     * @return {@link Frame}
      * @throws NullPointerException If no frame is added
      */
     public Frame getFrame() throws NullPointerException {
@@ -142,14 +137,14 @@ public class Window {
 
     /**
      * Add a menu to the window that is placed horizontal at the top of the window.
-     * @return The menu
+     * @return {@link Menu}
      */
     public Menu addMenu(){
         return menu = new Menu(this);
     }
 
     /**
-     * @return The menu
+     * @return {@link Menu}
      * @throws NullPointerException If no menu is added
      */
     public Menu getMenu() throws NullPointerException{
@@ -170,7 +165,7 @@ public class Window {
     }
 
     /**
-     * @return The window.
+     * @return The internal window.
      */
     JFrame getWindow() {
         return window;
