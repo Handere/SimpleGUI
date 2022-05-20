@@ -1,4 +1,4 @@
-package simpleGUI.utilities;
+package simpleGUI.components;
 
 /**
  * A calendar event that can be attached to a calendar.

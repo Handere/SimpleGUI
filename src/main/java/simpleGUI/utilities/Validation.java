@@ -1,4 +1,4 @@
-package simpleGUI.io;
+package simpleGUI.utilities;
 
 /**
  * The validator.

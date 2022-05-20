@@ -1,4 +1,4 @@
-package simpleGUI.utilities;
+package simpleGUI.components;
 
 import simpleGUI.Frame;
 
