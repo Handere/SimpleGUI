@@ -20,6 +20,13 @@ public class Frame {
     private Container frame;
 
     /**
+     * Create an empty frame.
+     */
+    Frame() {
+
+    }
+
+    /**
      * Create a frame with border layout.
      * @param owner The window.
      */
@@ -128,5 +135,15 @@ public class Frame {
      */
     Container getFrame() {
         return frame;
+    }
+
+    /**
+     * Set the owner.
+     * @param owner {@link Window}
+     */
+    void setOwner(Window owner) {
+        this.owner = owner;
+        frame = owner.getWindow().getContentPane();
+        frame.setLayout(new BoxLayout(frame, BoxLayout.PAGE_AXIS));
     }
 }

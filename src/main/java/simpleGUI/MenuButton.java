@@ -2,6 +2,8 @@ package simpleGUI;
 
 import javax.swing.*;
 
+//Todo legge inn navigasjon mellom vinduer
+
 /**
  * An event button.
  */
@@ -55,5 +57,14 @@ public class MenuButton implements Button {
      */
     public void setTargetWindow(Window targetWindow) {
         this.targetWindow = targetWindow;
+    }
+
+    /**
+     * Set the button name.
+     * @param buttonName The button name.
+     */
+    @Override
+    public void setButtonName(String buttonName) {
+        menuButton.setName(buttonName);
     }
 }

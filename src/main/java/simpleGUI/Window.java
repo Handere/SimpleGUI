@@ -1,5 +1,7 @@
 package simpleGUI;
 
+import com.sun.jdi.request.DuplicateRequestException;
+
 import javax.swing.*;
 
 
@@ -24,60 +26,16 @@ public class Window {
     private Frame frame;
 
     /**
-     * The window builder.
+     * Create the window.
+     * @param title The window title.
+     * @param width The window width.
+     * @param height The window height.
      */
-    public static class WindowBuilder {
-        private String title = "SimpleGUI";
-        private int height = 500;
-        private int width = 600;
-        private Frame frame;
+    Window(String title, int width, int height) {
+        this.window = new JFrame(title);
+        setSize(width, height);
+        this.window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
 
-        /**
-         * Build a window.
-         */
-        public WindowBuilder() {
-
-        }
-
-        /**
-         * Add a custom title.
-         * @param title The window title.
-         * @return {@link WindowBuilder}
-         */
-        public WindowBuilder withCustomTitle(String title) {
-            this.title = title;
-            return this;
-        }
-
-        /**
-         * Add custom with and height.
-         * @param heightInPixels The window height.
-         * @param widthInPixels The window width.
-         * @return {@link WindowBuilder}
-         */
-        public WindowBuilder withCustomSize(int heightInPixels, int widthInPixels) {
-            this.height = heightInPixels;
-            this.width = widthInPixels;
-            return this;
-        }
-
-        /**
-         * Build the window with specified options.
-         * @return {@link WindowBuilder}
-         */
-        public  Window build() {
-            return new Window(this);
-        }
-    }
-
-    /**
-     * Build a window with specified options.
-     * @param windowBuilder {@link WindowBuilder}
-     */
-    public Window(WindowBuilder windowBuilder) {
-        this.window = new JFrame(windowBuilder.title);
-        setSize(windowBuilder.width, windowBuilder.height);
-        window.setDefaultCloseOperation(window.EXIT_ON_CLOSE);
         setDefaultIcon();
         build();
     }
@@ -117,12 +75,19 @@ public class Window {
     /**
      * Add a frame to the window.
      * @return {@link Frame}
+     * @throws DuplicateRequestException If frame is already added.
      */
-    public Frame addFrame(){
-        return frame = new Frame(this);
+    public Frame addFrame() throws DuplicateRequestException {
+        if (frame != null) {
+            throw new DuplicateRequestException("A Frame already exist.");
+        }
+        else {
+            return frame = new Frame(this);
+        }
     }
 
     /**
+     * Get the frame attached to the window.
      * @return {@link Frame}
      * @throws NullPointerException If no frame is added
      */
@@ -154,6 +119,14 @@ public class Window {
         else {
             return menu;
         }
+    }
+
+    /**
+     * Set the window title.
+     * @param title The window title.
+     */
+    void setTitle(String title) {
+        window.setTitle(title);
     }
 
     /**

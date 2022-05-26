@@ -7,7 +7,7 @@ import javax.swing.border.TitledBorder;
 /**
  * A multi line text box.
  */
-public class MultiLineTextBox {
+public class MultiLineTextBox implements TextDisplay{
 
     /**
      * The default text of the multi line text box.
@@ -145,5 +145,19 @@ public class MultiLineTextBox {
         }
         owner.getFrame().add(multiLineTextBoxPanel);
         owner.getOwner().getWindow().pack();
+    }
+
+    /**
+     * @return The multi line text box.
+     */
+    JTextArea getMultiLineTextBox() {
+        return multiLineTextBox;
+    }
+
+    /**
+     * @return The multi line text box.
+     */
+    JPanel getMultiLineTextBoxPanel() {
+        return multiLineTextBoxPanel;
     }
 }

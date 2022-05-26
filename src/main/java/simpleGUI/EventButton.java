@@ -1,6 +1,9 @@
 package simpleGUI;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * An event button.
@@ -12,6 +15,14 @@ public class EventButton implements Button {
      */
     private final String DEFAULT_BUTTON_NAME = "Click me";
 
+    private int eventChoice = 0;
+
+    private Component eventObject;
+
+    private Component secondEventObject;
+
+    int push = 0;
+
     /**
      * The owner frame of the event button.
      */
@@ -21,8 +32,6 @@ public class EventButton implements Button {
      * The event button.
      */
     private JButton button;
-
-    //TODO: Legg til Action funksjonalitet
 
     /**
      * The default width of the event button.
@@ -55,6 +64,7 @@ public class EventButton implements Button {
         this.owner = owner;
         this.button = new JButton(buttonName);
         button.setBounds(button.getX(), button.getY(), DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
+        button.addActionListener(new EventButtonListener());
         owner.getFrame().add(button);
     }
 
@@ -70,14 +80,6 @@ public class EventButton implements Button {
         this.button = new JButton(buttonName);
         button.setBounds(button.getX(), button.getY(), width, height);
         owner.getFrame().add(button);
-    }
-
-    /**
-     * Set the name of the event button.
-     * @param buttonName The name of the event button.
-     */
-    public void setButtonName(String buttonName) {
-        button.setName(buttonName);
     }
 
     /**
@@ -105,5 +107,76 @@ public class EventButton implements Button {
      */
     public void setSize(int x, int y, int width, int height) {
         button.setBounds(x, y, width, height);
+    }
+
+    /**
+     * Make the button hide and show a text display.
+     * @param textDisplay Text display to be shown or hidden.
+     */
+    public void showAndHideTextEvent(TextDisplay textDisplay) {
+        if (textDisplay.getClass() == SingleLineTextLabel.class) {
+            this.eventObject = ((SingleLineTextLabel) textDisplay).getSingleLineTextLabel();
+        }
+        else if (textDisplay.getClass() == MultiLineTextBox.class) {
+            this.eventObject = ((MultiLineTextBox) textDisplay).getMultiLineTextBox();
+            this.secondEventObject = ((MultiLineTextBox) textDisplay).getMultiLineTextBoxPanel();
+        }
+
+        eventChoice = 1;
+    }
+
+
+    /**
+     * Set the button name.
+     * @param buttonName The button name.
+     */
+    @Override
+    public void setButtonName(String buttonName) {
+        this.button.setName(buttonName);
+    }
+
+    /**
+     * An event listener for the event button.
+     */
+    class EventButtonListener implements ActionListener {
+
+        /**
+         * The action.
+         * @param e Action.
+         */
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            switch (eventChoice) {
+                case 1:
+                    showAndHideTexEvent();
+                    break;
+                case 2:
+
+                    break;
+            }
+        }
+
+        /**
+         * Event that show and hide a text display.
+         */
+        void showAndHideTexEvent() {
+
+            if(push == 0){
+                eventObject.setVisible(false);
+                if (secondEventObject != null) {
+                    secondEventObject.setVisible(false);
+                }
+                push = 1;
+            }
+            else{
+                eventObject.setVisible(true);
+                if (secondEventObject != null) {
+                    secondEventObject.setVisible(true);
+                }
+                push = 0;
+            }
+
+        }
     }
 }

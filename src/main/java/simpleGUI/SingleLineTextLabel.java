@@ -6,7 +6,7 @@ import javax.swing.*;
 /**
  * A single line text label.
  */
-public class SingleLineTextLabel {
+public class SingleLineTextLabel implements TextDisplay{
 
     /**
      * The default text of the single line text label.
@@ -63,5 +63,12 @@ public class SingleLineTextLabel {
      */
     public void setSize(int x, int y, int width, int height) {
         singleLineTextLabel.setBounds(x, y, width, height);
+    }
+
+    /**
+     * @return The single line text label.
+     */
+    public JLabel getSingleLineTextLabel() {
+        return singleLineTextLabel;
     }
 }

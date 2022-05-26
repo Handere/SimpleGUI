@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Menu {
 
     /**
-     * The owner window of the menu.
+     * {@link Window}
      */
     private Window owner;
 
@@ -21,9 +21,16 @@ public class Menu {
     private JMenuBar menu;
 
     /**
-     * The attached bread crumbs, if added.
+     * {@link BreadCrumbs}
      */
     private BreadCrumbs breadCrumbs;
+
+    /**
+     * Create an empty menu.
+     */
+    public Menu() {
+
+    }
 
     /**
      * Create a menu, attached to a chosen window.
@@ -41,7 +48,7 @@ public class Menu {
      * @throws ExecutionControl.NotImplementedException Not implemented.
      */
     public BreadCrumbs addBreadCrumbs() throws ExecutionControl.NotImplementedException {
-        return breadCrumbs = new BreadCrumbs();
+        return breadCrumbs = new BreadCrumbs(this);
     }
 
     /**
@@ -66,5 +73,15 @@ public class Menu {
      */
     public JMenuBar getMenu() {
         return menu;
+    }
+
+    /**
+     * Set the owner.
+     * @param owner {@link Window}
+     */
+    void setOwner(Window owner) {
+        this.owner = owner;
+        menu = new JMenuBar();
+        owner.getWindow().setJMenuBar(menu);
     }
 }
