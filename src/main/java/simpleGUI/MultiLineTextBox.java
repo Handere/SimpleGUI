@@ -160,4 +160,16 @@ public class MultiLineTextBox implements TextDisplay{
     JPanel getMultiLineTextBoxPanel() {
         return multiLineTextBoxPanel;
     }
+
+    /**
+     * Get the text content of the multi line text box.
+     * @return The text content.
+     * @throws NullPointerException If text content is null.
+     */
+    public String getTextContent() throws NullPointerException {
+        if (multiLineTextBox.getText() == null) {
+            throw new NullPointerException("Text content is null");
+        }
+        return multiLineTextBox.getText();
+    }
 }

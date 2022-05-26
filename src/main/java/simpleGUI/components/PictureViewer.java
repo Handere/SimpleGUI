@@ -25,14 +25,12 @@ public class PictureViewer {
     int widthInPixels;
 
     /**
-     * Constructor.
      * Create an empty PictureViewer that is not connected to an owner frame, and do not have a size.
      */
     public PictureViewer() {
     }
 
     /**
-     * Constructor.
      * Setting the height to 300px and width to 500px by default.
      * @param owner The Frame that hold the PictureViewer.
      * @param source The filepath to the source file.
@@ -45,7 +43,6 @@ public class PictureViewer {
     }
 
     /**
-     * Constructor.
      * @param owner The Frame that hold the PictureViewer.
      * @param source The filepath to the source file.
      * @param heightInPixels The height of the PictureViewer in pixels.

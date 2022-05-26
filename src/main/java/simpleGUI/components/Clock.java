@@ -89,14 +89,10 @@ public class Clock {
     /**
      * @param heightInPixels The height of the clock in pixels.
      */
-    public void setHeightInPixels(int heightInPixels) {
-
-    }
+    public void setHeightInPixels(int heightInPixels) { }
 
     /**
      * @param widthInPixels The width of the clock in pixels.
      */
-    public void setWidthInPixels(int widthInPixels) {
-
-    }
+    public void setWidthInPixels(int widthInPixels) { }
 }

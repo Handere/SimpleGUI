@@ -5,110 +5,91 @@ import simpleGUI.Frame;
 import java.util.HashMap;
 
 /**
- * A calendar that can be attached to a Frame.
+ * A calendar that hold can hold calendar events.
  */
 public class Calendar {
 
     /**
-     * The Frame that hold the Calendar.
+     * {@link Frame}
      */
-    Frame owner;
+    private Frame owner;
+
     /**
-     * The height of the Calendar in pixels.
+     * The default height in pixels.
      */
-    int heightInPixels;
+    private final int DEFAULT_HEIGHT_IN_PIXELS = 500;
+
     /**
-     * The width of the Calendar in pixels.
+     * The default width in pixels.
      */
-    int widthInPixels;
+    private final int DEFAULT_WIDTH_IN_PIXELS = 500;
+
     /**
      * HashMap that hold all calendar events, where the key is datetime: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
      */
-    HashMap<String, CalendarEvent> calenderEvents;
+    HashMap<String, CalendarEvent> calenderEvents = new HashMap<>();
 
     /**
-     * Constructor.
-     * Create an empty Calendar that is not connected to an owner frame, and do not have a size.
+     * Create an empty calendar.
      */
-    public Calendar() {
+    Calendar() {
     }
 
     /**
-     * Constructor.
-     * Setting the height to 500px and width to 500px by default.
-     * @param owner The Frame that hold the Calendar.
+     * Create an empty calendar.
+     * @param owner {@link Frame}.
      */
     public Calendar(Frame owner) {
         this.owner = owner;
-        heightInPixels = 500;
-        widthInPixels = 500;
     }
 
     /**
-     * Constructor.
-     * @param owner The Frame that hold the Calendar.
-     * @param heightInPixels The height of the Calendar in pixels.
-     * @param widthInPixels The width of the Calendar in pixels.
+     * Create a calendar with custom size.
+     * @param owner {@link Frame}
+     * @param heightInPixels The height in pixels.
+     * @param widthInPixels The width in pixels.
      */
     public Calendar(Frame owner, int heightInPixels, int widthInPixels) {
         this.owner = owner;
-        this.heightInPixels = heightInPixels;
-        this.widthInPixels = widthInPixels;
     }
 
     /**
-     * Add a CalenderEvent to the calendar, on a given datetime in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
-     * @param calendarEvent The CalendarEvent to be added.
+     * Add a calendar event to the calendar.
+     * @param calendarEvent {@link CalendarEvent}
      */
     public void addCalendarEvent(CalendarEvent calendarEvent) {
+        calenderEvents.put(calendarEvent.datetime, calendarEvent);
     }
 
     /**
-     * Remove a CalendarEvent from the calendar.
-     * @param calendarEvent The CalendarEvent to be removed.
+     * Remove a calendar event from the calendar.
+     * @param calendarEvent {@link CalendarEvent}
      */
     public void removeCalendarEvent(CalendarEvent calendarEvent) {
+        calenderEvents.remove(calendarEvent.datetime, calendarEvent);
     }
 
     /**
-     * @return The Frame that hold the Calendar.
+     * @return {@link Frame}
      */
     public Frame getOwner() {
         return owner;
     }
 
     /**
-     * @param owner The Frame that hold the Calendar.
+     * @param owner {@link Frame}
      */
     public void setOwner(Frame owner) {
         this.owner = owner;
     }
 
     /**
-     * @return The height of the Calendar in pixels.
+     * @param heightInPixels The height in pixels.
      */
-    public int getHeightInPixels() {
-        return heightInPixels;
-    }
+    public void setHeightInPixels(int heightInPixels) { }
 
     /**
-     * @param heightInPixels The height of the Calendar in pixels.
+     * @param widthInPixels The width in pixels.
      */
-    public void setHeightInPixels(int heightInPixels) {
-        this.heightInPixels = heightInPixels;
-    }
-
-    /**
-     * @return The width of the Calendar in pixels.
-     */
-    public int getWidthInPixels() {
-        return widthInPixels;
-    }
-
-    /**
-     * @param widthInPixels The width of the Calendar in pixels.
-     */
-    public void setWidthInPixels(int widthInPixels) {
-        this.widthInPixels = widthInPixels;
-    }
+    public void setWidthInPixels(int widthInPixels) { }
 }
