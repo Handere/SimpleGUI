@@ -22,13 +22,21 @@ public class Main {
         EventButton eventButton1 = new EventButton(frame, "hide even more");
         eventButton1.showAndHideTextEvent(multiLineTextBox);
 
+        Menu menu = new Menu(window);
+        MenuButton menuButton = menu.addMenuButton("window");
+
+
 
         Window window1 = new WindowBuilder()
+                .isVisible(false)
                 .build();
 
+        Menu menu1 = new Menu(window1);
+        MenuButton menuButton1 = menu1.addMenuButton("window1");
 
+        menuButton1.navigateBetweenWindowsEvent(window1, window);
 
-
+        menuButton.navigateBetweenWindowsEvent(window, window1);
 
     }
 }

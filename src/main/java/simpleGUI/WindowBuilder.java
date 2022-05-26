@@ -82,6 +82,14 @@ public class WindowBuilder {
     }
 
     /**
+     * Set the window visible on the screen.
+     */
+    public WindowBuilder isVisible(boolean visible) {
+        this.window.getWindow().setVisible(visible);
+        return this;
+    }
+
+    /**
      * Build the window with specified options.
      * @return {@link Window}
      */

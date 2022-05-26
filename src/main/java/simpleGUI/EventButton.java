@@ -15,13 +15,25 @@ public class EventButton implements Button {
      */
     private final String DEFAULT_BUTTON_NAME = "Click me";
 
+    /**
+     * The event choice.
+     */
     private int eventChoice = 0;
 
+    /**
+     * The event object to handle.
+     */
     private Component eventObject;
 
+    /**
+     * A secondary event object to handle.
+     */
     private Component secondEventObject;
 
-    int push = 0;
+    /**
+     * Indicate a click.
+     */
+    int click = 0;
 
     /**
      * The owner frame of the event button.
@@ -52,6 +64,7 @@ public class EventButton implements Button {
         this.owner = owner;
         this.button = new JButton(DEFAULT_BUTTON_NAME);
         button.setBounds(button.getX(), button.getY(), DEFAULT_WIDTH_IN_PIXELS, DEFAULT_HEIGHT_IN_PIXELS);
+        button.addActionListener(new EventButtonListener());
         owner.getFrame().add(button);
     }
 
@@ -79,6 +92,7 @@ public class EventButton implements Button {
         this.owner = owner;
         this.button = new JButton(buttonName);
         button.setBounds(button.getX(), button.getY(), width, height);
+        button.addActionListener(new EventButtonListener());
         owner.getFrame().add(button);
     }
 
@@ -125,7 +139,6 @@ public class EventButton implements Button {
         eventChoice = 1;
     }
 
-
     /**
      * Set the button name.
      * @param buttonName The button name.
@@ -162,21 +175,20 @@ public class EventButton implements Button {
          */
         void showAndHideTexEvent() {
 
-            if(push == 0){
+            if(click == 0){
                 eventObject.setVisible(false);
                 if (secondEventObject != null) {
                     secondEventObject.setVisible(false);
                 }
-                push = 1;
+                click = 1;
             }
             else{
                 eventObject.setVisible(true);
                 if (secondEventObject != null) {
                     secondEventObject.setVisible(true);
                 }
-                push = 0;
+                click = 0;
             }
-
         }
     }
 }

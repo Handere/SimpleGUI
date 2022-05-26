@@ -10,12 +10,30 @@ public class BreadCrumbs {
      */
     private Menu owner;
 
-    private boolean show;
+    /**
+     * Indicate if the bread crumbs are visible.
+     */
+    private boolean visible = true;
 
     /**
      * Create bread crumbs.
      */
     public BreadCrumbs(Menu owner) {
         this.owner = owner;
+    }
+
+    /**
+     * @return Indicate if the bread crumbs are visible.
+     */
+    public boolean isVisible() {
+        return visible;
+    }
+
+    /**
+     * Set visible.
+     * @param visible Indicate if the bread crumbs are visible.
+     */
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 }
