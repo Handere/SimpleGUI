@@ -129,6 +129,7 @@ public class MultiLineTextBox implements TextDisplay{
      * Build the multi line text box as specified.
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      * @param borderTitle The title of the border.
+     * @param text The text content.
      */
     private void buildMultiLineTextBox(boolean addScrollbar, String borderTitle, String text) {
         multiLineTextBox.setText(text);
