@@ -26,7 +26,7 @@ public class Calendar {
     private final int DEFAULT_WIDTH_IN_PIXELS = 500;
 
     /**
-     * HashMap that hold all calendar events, where the key is datetime: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
+     * HashMap that hold all calendar events, where the key is datetime: "yyyy'-'MM'-'dd'T'HH':'mm':'ss".
      */
     HashMap<String, CalendarEvent> calenderEvents = new HashMap<>();
 
@@ -65,17 +65,11 @@ public class Calendar {
     }
 
     /**
+     * Get the owner frame.
      * @return {@link Frame}
      */
     public Frame getOwner() {
         return owner;
-    }
-
-    /**
-     * @param owner {@link Frame}
-     */
-    public void setOwner(Frame owner) {
-        this.owner = owner;
     }
 
     /**

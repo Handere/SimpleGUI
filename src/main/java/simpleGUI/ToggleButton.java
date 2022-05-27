@@ -5,7 +5,7 @@ import jdk.jshell.spi.ExecutionControl;
 import javax.swing.*;
 
 /**
- * A toggle button that can be attached to a Form or a Frame.
+ * A toggle button.
  */
 public class ToggleButton implements Button{
 

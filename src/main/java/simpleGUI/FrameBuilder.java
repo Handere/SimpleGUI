@@ -14,6 +14,7 @@ public class FrameBuilder {
 
     /**
      * Build a frame.
+     * @param window {@link Window}
      */
     public FrameBuilder(Window window) {
         start(window);

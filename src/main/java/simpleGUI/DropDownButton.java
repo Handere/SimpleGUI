@@ -1,13 +1,12 @@
 package simpleGUI;
 
-import jdk.jshell.spi.ExecutionControl;
-
 /**
- * A dropdown button that can be attached to a Form or Frame.
+ * A dropdown button.
  */
 public class DropDownButton implements Button{
 
     /**
+     * The owner frame.
      * {@link Frame}
      */
     private Frame owner;
@@ -15,10 +14,9 @@ public class DropDownButton implements Button{
     /**
      * Create a dropdown button.
      * @param owner {@link Frame}
-     * @throws ExecutionControl.NotImplementedException Not implemented.
      */
-    public DropDownButton(Frame owner) throws ExecutionControl.NotImplementedException {
-        throw new ExecutionControl.NotImplementedException("To be implemented...");
+    public DropDownButton(Frame owner)  {
+        this.owner = owner;
     }
 
     /**

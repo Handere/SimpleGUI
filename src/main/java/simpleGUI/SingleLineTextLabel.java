@@ -15,6 +15,7 @@ public class SingleLineTextLabel implements TextDisplay{
 
     /**
      * The owner frame of the single line text label.
+     * {@link Frame}
      */
     private Frame owner;
 
@@ -24,9 +25,9 @@ public class SingleLineTextLabel implements TextDisplay{
     private JLabel singleLineTextLabel;
 
     /**
-     * Create a single line text label attached to a chosen frame.
+     * Create a single line text label.
      * Default text.
-     * @param owner The frame.
+     * @param owner {@link Frame}
      */
     public SingleLineTextLabel(Frame owner) {
         this.singleLineTextLabel = new JLabel(DEFAULT_TEXT);
@@ -35,8 +36,8 @@ public class SingleLineTextLabel implements TextDisplay{
     }
 
     /**
-     * Create a single line text label with a chosen text, attached to a chosen frame.
-     * @param owner The frame.
+     * Create a single line text label with a chosen text.
+     * @param owner {@link Frame}
      * @param singleLineText The single line text label.
      */
     public SingleLineTextLabel(Frame owner, String singleLineText) {

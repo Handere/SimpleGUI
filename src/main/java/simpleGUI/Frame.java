@@ -19,12 +19,6 @@ public class Frame {
      */
     private Container frame;
 
-    /**
-     * Create an empty frame.
-     */
-    Frame() {
-
-    }
 
     /**
      * Create a frame with border layout.

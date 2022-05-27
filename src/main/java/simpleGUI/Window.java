@@ -16,12 +16,12 @@ public class Window {
     private JFrame window;
 
     /**
-     * The attached menu, if added.
+     * {@link Menu}
      */
     private Menu menu;
 
     /**
-     * The attached frame, if added.
+     * {@link Frame}
      */
     private Frame frame;
 
@@ -109,6 +109,7 @@ public class Window {
     }
 
     /**
+     * Get the menu.
      * @return {@link Menu}
      * @throws NullPointerException If no menu is added
      */
@@ -138,6 +139,7 @@ public class Window {
     }
 
     /**
+     * Get the window.
      * @return The internal window.
      */
     JFrame getWindow() {

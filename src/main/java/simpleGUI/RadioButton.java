@@ -5,14 +5,14 @@ import jdk.jshell.spi.ExecutionControl;
 import javax.swing.*;
 
 /**
- * A radio button that can be attached to a Form or a Frame.
+ * A radio button.
  */
 public class RadioButton implements Button{
 
     /**
      * {@link Window}
      */
-    private Window owner;
+    private Frame owner;
 
     /**
      * The radio button.
@@ -23,10 +23,12 @@ public class RadioButton implements Button{
      * Create a radio button.
      * @param owner {@link Frame}
      * @param buttonName The button name.
-     * @throws ExecutionControl.NotImplementedException Not implemented.
+     *
      */
-    public RadioButton(Frame owner, String buttonName) throws ExecutionControl.NotImplementedException {
-        throw new ExecutionControl.NotImplementedException("To be implemented...");
+    public RadioButton(Frame owner, String buttonName) {
+        this.owner = owner;
+        this.radioButton = new JRadioButton(buttonName);
+        owner.getFrame().add(radioButton);
     }
 
     /**

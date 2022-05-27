@@ -73,6 +73,11 @@ public class MenuButton implements Button {
         this.targetWindow = targetWindow;
     }
 
+    /**
+     * Set navigation between two windows.
+     * @param mainWindow Current window.
+     * @param targetWindow Target window.
+     */
     public void navigateBetweenWindowsEvent(Window mainWindow, Window targetWindow) {
         this.mainWindow = mainWindow;
         this.targetWindow = targetWindow;

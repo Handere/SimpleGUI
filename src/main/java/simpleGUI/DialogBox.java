@@ -49,15 +49,27 @@ public class DialogBox {
 
     /**
      * Options you can choose from to make a dialog box.
-     * INFO: Show a dialog box with information.
-     * WARNING: Show a dialog box warning information.
-     * INPUT: Show a dialog box with input.
-     * OPTION: show a dialog box with options "yes", "no" and "cancel".
      */
     public enum DialogBoxType {
+
+        /**
+         * Show a dialog box with information.
+         */
         INFO,
+
+        /**
+         * Show a dialog box warning information.
+         */
         WARNING,
+
+        /**
+         * Show a dialog box with input.
+         */
         INPUT,
+
+        /**
+         * show a dialog box with options "yes", "no" and "cancel".
+         */
         OPTION
     }
 }

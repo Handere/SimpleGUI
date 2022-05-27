@@ -17,6 +17,7 @@ public class BreadCrumbs {
 
     /**
      * Create bread crumbs.
+     * @param owner {@link Menu}
      */
     public BreadCrumbs(Menu owner) {
         this.owner = owner;

@@ -31,6 +31,7 @@ public class MultiLineTextBox implements TextDisplay{
 
     /**
      * The owner frame of the multi line text box.
+     * {@link Frame}
      */
     private Frame owner;
 
@@ -51,8 +52,7 @@ public class MultiLineTextBox implements TextDisplay{
 
     /**
      * Create a multi line text box with a scrollbar (if true), attached to a chosen frame.
-     * Default border title.
-     * @param owner The frame.
+     * @param owner {@link Frame}
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      */
     public MultiLineTextBox(Frame owner, boolean addScrollbar) {
@@ -63,8 +63,7 @@ public class MultiLineTextBox implements TextDisplay{
 
     /**
      * Create a multi line text box with a chosen text, attached to a chosen frame.
-     * Default border title.
-     * @param owner The frame.
+     * @param owner {@link Frame}
      * @param text The text content.
      */
     public MultiLineTextBox(Frame owner, String text) {
@@ -76,8 +75,7 @@ public class MultiLineTextBox implements TextDisplay{
 
     /**
      * Create a multi line text box with a chosen text, a scrollbar (if true), attached to a chosen frame.
-     * Default border title.
-     * @param owner The frame.
+     * @param owner {@link Frame}
      * @param text The text content.
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      */
@@ -89,7 +87,7 @@ public class MultiLineTextBox implements TextDisplay{
 
     /**
      * Create a multi line text box with a chosen text, a scrollbar (if true), a border title, attached to a chosen frame.
-     * @param owner The frame.
+     * @param owner {@link Frame}
      * @param text The text content.
      * @param addScrollbar If true add a vertical (always visible) and horizontal (if needed).
      * @param textBoxBorderTitle The title of the border.

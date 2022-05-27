@@ -25,12 +25,6 @@ public class Menu {
      */
     private BreadCrumbs breadCrumbs;
 
-    /**
-     * Create an empty menu.
-     */
-    public Menu() {
-
-    }
 
     /**
      * Create a menu, attached to a chosen window.
@@ -45,9 +39,8 @@ public class Menu {
     /**
      * Add bread crumbs to the menu.
      * @return Bread crumbs.
-     * @throws ExecutionControl.NotImplementedException Not implemented.
      */
-    public BreadCrumbs addBreadCrumbs() throws ExecutionControl.NotImplementedException {
+    public BreadCrumbs addBreadCrumbs() {
         return breadCrumbs = new BreadCrumbs(this);
     }
 

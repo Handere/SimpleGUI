@@ -6,7 +6,7 @@ package simpleGUI.components;
 public class CalendarEvent {
 
     /**
-     * The datetime of the CalendarEvent, in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
+     * The datetime of the CalendarEvent, in the format: "yyyy'-'MM'-'dd'T'HH':'mm':'ss".
      */
     String datetime;
 
@@ -22,7 +22,7 @@ public class CalendarEvent {
 
     /**
      * Create an empty calendar event with datetime.
-     * @param datetime The datetime of the calendar event, in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
+     * @param datetime The datetime of the calendar event, in the format: "yyyy'-'MM'-'dd'T'HH':'mm':'ss".
      */
     CalendarEvent(String datetime) {
         this.datetime = datetime;
@@ -30,7 +30,7 @@ public class CalendarEvent {
 
     /**
      * Create a calendar with custom title and datetime.
-     * @param datetime The datetime of the calendar event, in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
+     * @param datetime The datetime of the calendar event, in the format: "yyyy'-'MM'-'dd'T'HH':'mm':'ss".
      * @param title The title of the event.
      */
     public CalendarEvent(String datetime, String title) {
@@ -40,7 +40,7 @@ public class CalendarEvent {
 
     /**
      * Create a calendar with custom title, datetime and details.
-     * @param datetime The datetime of the calendar event, in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
+     * @param datetime The datetime of the calendar event, in the format: "yyyy'-'MM'-'dd'T'HH':'mm':'ss".
      * @param title The title of the event.
      * @param details The details of the event.
      */
@@ -51,20 +51,23 @@ public class CalendarEvent {
     }
 
     /**
-     * @return The datetime of the calendar event, in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
+     * Gets the date and time
+     * @return The datetime of the calendar event, in the format: "yyyy'-'MM'-'dd'T'HH':'mm':'ss".
      */
     public String getDatetime() {
         return datetime;
     }
 
     /**
-     * @param datetime The datetime of the calendar event, in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
+     * Set the date and time
+     * @param datetime The datetime of the calendar event, in the format: "yyyy'-'MM'-'dd'T'HH':'mm':'ss".
      */
     public void setDatetime(String datetime) {
         this.datetime = datetime;
     }
 
     /**
+     * Get the title
      * @return The title of the event.
      */
     public String getTitle() {
@@ -72,6 +75,7 @@ public class CalendarEvent {
     }
 
     /**
+     * Set the title.
      * @param title The title of the event.
      */
     public void setTitle(String title) {
@@ -79,6 +83,7 @@ public class CalendarEvent {
     }
 
     /**
+     * Get the details.
      * @return The details of the event.
      */
     public String getDetails() {
@@ -86,6 +91,7 @@ public class CalendarEvent {
     }
 
     /**
+     * Set the details.
      * @param details The details of the event.
      */
     public void setDetails(String details) {
