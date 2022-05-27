@@ -5,11 +5,12 @@ import simpleGUI.Frame;
 import java.util.HashMap;
 
 /**
- * A calendar that hold can hold calendar events.
+ * A calendar that hold calendar events.
  */
 public class Calendar {
 
     /**
+     * The owner frame of the calendar.
      * {@link Frame}
      */
     private Frame owner;
@@ -28,12 +29,6 @@ public class Calendar {
      * HashMap that hold all calendar events, where the key is datetime: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
      */
     HashMap<String, CalendarEvent> calenderEvents = new HashMap<>();
-
-    /**
-     * Create an empty calendar.
-     */
-    Calendar() {
-    }
 
     /**
      * Create an empty calendar.
@@ -84,11 +79,13 @@ public class Calendar {
     }
 
     /**
+     * Set the height in pixels
      * @param heightInPixels The height in pixels.
      */
     public void setHeightInPixels(int heightInPixels) { }
 
     /**
+     * Set the with in pixels.
      * @param widthInPixels The width in pixels.
      */
     public void setWidthInPixels(int widthInPixels) { }

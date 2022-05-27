@@ -11,6 +11,16 @@ import java.awt.event.ActionListener;
 public class EventButton implements Button {
 
     /**
+     * The default width of the event button.
+     */
+    private final int DEFAULT_WIDTH_IN_PIXELS = 100;
+
+    /**
+     * The default height of the event button.
+     */
+    private final int DEFAULT_HEIGHT_IN_PIXELS = 50;
+
+    /**
      * The default name of the event button.
      */
     private final String DEFAULT_BUTTON_NAME = "Click me";
@@ -19,6 +29,11 @@ public class EventButton implements Button {
      * The event choice.
      */
     private int eventChoice = 0;
+
+    /**
+     * Indicate a click.
+     */
+    private int click = 0;
 
     /**
      * The event object to handle.
@@ -31,9 +46,9 @@ public class EventButton implements Button {
     private Component secondEventObject;
 
     /**
-     * Indicate a click.
+     * The event dialog box.
      */
-    int click = 0;
+    private DialogBox eventDialogBox;
 
     /**
      * The owner frame of the event button.
@@ -44,16 +59,6 @@ public class EventButton implements Button {
      * The event button.
      */
     private JButton button;
-
-    /**
-     * The default width of the event button.
-     */
-    private final int DEFAULT_WIDTH_IN_PIXELS = 100;
-
-    /**
-     * The default height of the event button.
-     */
-    private final int DEFAULT_HEIGHT_IN_PIXELS = 50;
 
     /**
      * Create an event button, attached to a chosen frame.
@@ -124,10 +129,10 @@ public class EventButton implements Button {
     }
 
     /**
-     * Make the button hide and show a text display.
+     * Make the button hide and show a text display on button click.
      * @param textDisplay Text display to be shown or hidden.
      */
-    public void showAndHideTextEvent(TextDisplay textDisplay) {
+    public void showAndHideTextDisplayEvent(TextDisplay textDisplay) {
         if (textDisplay.getClass() == SingleLineTextLabel.class) {
             this.eventObject = ((SingleLineTextLabel) textDisplay).getSingleLineTextLabel();
         }
@@ -135,8 +140,16 @@ public class EventButton implements Button {
             this.eventObject = ((MultiLineTextBox) textDisplay).getMultiLineTextBox();
             this.secondEventObject = ((MultiLineTextBox) textDisplay).getMultiLineTextBoxPanel();
         }
-
         eventChoice = 1;
+    }
+
+    /**
+     * Show the dialog box when button click.
+     * @param dialogBox {@link DialogBox}
+     */
+    public void showDialogBox(DialogBox dialogBox) {
+        eventDialogBox = dialogBox;
+        eventChoice = 2;
     }
 
     /**
@@ -161,12 +174,8 @@ public class EventButton implements Button {
         public void actionPerformed(ActionEvent e) {
 
             switch (eventChoice) {
-                case 1:
-                    showAndHideTexEvent();
-                    break;
-                case 2:
-
-                    break;
+                case 1 -> showAndHideTexEvent();
+                case 2 -> showDialogBoxEvent();
             }
         }
 
@@ -189,6 +198,13 @@ public class EventButton implements Button {
                 }
                 click = 0;
             }
+        }
+
+        /**
+         * Event that show the dialog box.
+         */
+        void showDialogBoxEvent() {
+            eventDialogBox.showDialogBox();
         }
     }
 }

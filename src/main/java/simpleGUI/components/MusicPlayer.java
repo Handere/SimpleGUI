@@ -3,19 +3,20 @@ package simpleGUI.components;
 import simpleGUI.Frame;
 
 /**
- * The music player
+ * A music player
  */
 public class MusicPlayer {
 
     /**
-     * The owner frame og the music player.
+     * The owner frame of the music player.
+     * {@link Frame}
      */
-    Frame owner;
+    private Frame owner;
 
     /**
      * The filepath to the source file.
      */
-    String source;
+    private String source;
 
     /**
      * The default height, in pixels.
@@ -30,14 +31,7 @@ public class MusicPlayer {
     /**
      * Define if the music player is currently playing music.
      */
-    boolean playing = false;
-
-    /**
-     * Create an empty music player that is not connected to an owner frame.
-     * Default height and width.
-     */
-    public MusicPlayer() {
-    }
+    private boolean playing = false;
 
     /**
      * Create an empty music player attached to a chosen frame.
@@ -50,13 +44,15 @@ public class MusicPlayer {
     }
 
     /**
-     * @return The frame that hold the music player.
+     * Get the owner frame.
+     * @return {@link Frame}
      */
     public Frame getOwner() {
         return owner;
     }
 
     /**
+     * Get the filepath to the source file.
      * @return The filepath to the source file, as a String.
      */
     public String getSource() {
@@ -64,6 +60,7 @@ public class MusicPlayer {
     }
 
     /**
+     * Set the filepath to the source file.
      * @param source The filepath to the source file.
      */
     public void setSource(String source) {
@@ -71,6 +68,7 @@ public class MusicPlayer {
     }
 
     /**
+     * Get if the music player is currently playing.
      * @return Define if the music player is currently playing music.
      */
     public boolean isPlaying() {
@@ -78,6 +76,7 @@ public class MusicPlayer {
     }
 
     /**
+     * Set if the music player is currently playing.
      * @param playing Define if the music player is currently playing music.
      */
     public void setPlaying(boolean playing) {

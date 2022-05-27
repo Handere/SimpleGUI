@@ -3,73 +3,71 @@ package simpleGUI.components;
 import simpleGUI.Frame;
 
 /**
- * A picture viewer that can be attached to a Frame.
+ * A picture viewer.
  */
 public class PictureViewer {
 
     /**
-     * The Frame that hold the PictureViewer.
+     * The owner frame.
+     * {@link Frame}
      */
-    Frame owner;
+    private Frame owner;
+
     /**
      * The filepath to the source file.
      */
-    String source;
-    /**
-     * The height of the PictureViewer in pixels.
-     */
-    int heightInPixels;
-    /**
-     * The width of the PictureViewer in pixels.
-     */
-    int widthInPixels;
+    private String source;
 
     /**
-     * Create an empty PictureViewer that is not connected to an owner frame, and do not have a size.
+     * The default height in pixels.
      */
-    public PictureViewer() {
-    }
+    private final int DEFAULT_HEIGHT_IN_PIXELS = 300;
 
     /**
-     * Setting the height to 300px and width to 500px by default.
-     * @param owner The Frame that hold the PictureViewer.
+     * The default width in pixels.
+     */
+    private final int DEFAULT_WIDTH_IN_PIXELS = 400;
+
+    /**
+     * Create a picture viewer with custom source.
+     * @param owner {@link Frame}
      * @param source The filepath to the source file.
      */
     public PictureViewer(Frame owner, String source) {
         this.owner = owner;
         this.source = source;
-        heightInPixels = 300;
-        widthInPixels = 500;
     }
 
     /**
-     * @param owner The Frame that hold the PictureViewer.
+     * Create a picture viewer with custom source, height and width.
+     * @param owner {@link Frame}
      * @param source The filepath to the source file.
-     * @param heightInPixels The height of the PictureViewer in pixels.
-     * @param widthInPixels The width of the PictureViewer in pixels.
+     * @param heightInPixels The height in pixels.
+     * @param widthInPixels The width in pixels.
      */
     public PictureViewer(Frame owner, String source, int heightInPixels, int widthInPixels) {
         this.owner = owner;
         this.source = source;
-        this.heightInPixels = heightInPixels;
-        this.widthInPixels = widthInPixels;
     }
 
     /**
-     * @return The Frame that hold the PictureViewer.
+     * Get the owner frame.
+     * @return {@link Frame}
      */
     public Frame getOwner() {
         return owner;
     }
 
     /**
-     * @param owner The Frame that hold the PictureViewer.
+     * Set the owner frame.
+     * @param owner {@link Frame}
      */
     public void setOwner(Frame owner) {
         this.owner = owner;
     }
 
     /**
+     * Get the source filepath.
      * @return The filepath to the source file.
      */
     public String getSource() {
@@ -77,6 +75,7 @@ public class PictureViewer {
     }
 
     /**
+     * Set the source filepath.
      * @param source The filepath to the source file.
      */
     public void setSource(String source) {
@@ -84,30 +83,14 @@ public class PictureViewer {
     }
 
     /**
-     * @return The height of the PictureViewer in pixels.
+     * Set the height in pixels.
+     * @param heightInPixels The height in pixels.
      */
-    public int getHeightInPixels() {
-        return heightInPixels;
-    }
+    public void setHeightInPixels(int heightInPixels) { }
 
     /**
-     * @param heightInPixels The height of the PictureViewer in pixels.
+     * Set the width in pixels.
+     * @param widthInPixels The width in pixels.
      */
-    public void setHeightInPixels(int heightInPixels) {
-        this.heightInPixels = heightInPixels;
-    }
-
-    /**
-     * @return The width of the PictureViewer in pixels.
-     */
-    public int getWidthInPixels() {
-        return widthInPixels;
-    }
-
-    /**
-     * @param widthInPixels The width of the PictureViewer in pixels.
-     */
-    public void setWidthInPixels(int widthInPixels) {
-        this.widthInPixels = widthInPixels;
-    }
+    public void setWidthInPixels(int widthInPixels) { }
 }

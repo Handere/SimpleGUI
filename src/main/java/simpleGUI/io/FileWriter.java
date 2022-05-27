@@ -1,7 +1,7 @@
 package simpleGUI.io;
 
 /**
- * The file writer.
+ * A file writer.
  */
 public class FileWriter {
 

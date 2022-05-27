@@ -39,6 +39,7 @@ public class CalendarEvent {
     }
 
     /**
+     * Create a calendar with custom title, datetime and details.
      * @param datetime The datetime of the calendar event, in the format: "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss".
      * @param title The title of the event.
      * @param details The details of the event.

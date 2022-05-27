@@ -3,7 +3,7 @@ package simpleGUI.io;
 import java.util.HashMap;
 
 /**
- * The file reader.
+ * A file reader.
  */
 public class FileReader {
 

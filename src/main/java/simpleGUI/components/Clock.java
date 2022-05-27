@@ -8,6 +8,7 @@ import simpleGUI.Frame;
 public class Clock {
 
     /**
+     * The owner frame of the clock.
      * {@link Frame}
      */
     private Frame owner;
@@ -26,13 +27,6 @@ public class Clock {
      * The default width in pixels.
      */
     private final int DEFAULT_WIDTH_IN_PIXELS = 100;
-
-    /**
-     * Create a clock.
-     */
-    Clock() {
-
-    }
 
     /**
      * Create a clock.
@@ -73,6 +67,7 @@ public class Clock {
     }
 
     /**
+     * Get the digital view setting.
      * @return Define if the clock is displayed as digital (true) or analog (false).
      */
     public boolean isDigitalView() {
@@ -80,6 +75,7 @@ public class Clock {
     }
 
     /**
+     * Set digital view.
      * @param digitalView Define if the clock is displayed as digital (true) or analog (false).
      */
     public void setDigitalView(boolean digitalView) {
@@ -87,11 +83,13 @@ public class Clock {
     }
 
     /**
+     * Set height in pixels.
      * @param heightInPixels The height of the clock in pixels.
      */
     public void setHeightInPixels(int heightInPixels) { }
 
     /**
+     * Set width in pixels.
      * @param widthInPixels The width of the clock in pixels.
      */
     public void setWidthInPixels(int widthInPixels) { }
