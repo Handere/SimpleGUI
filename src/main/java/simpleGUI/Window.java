@@ -68,7 +68,7 @@ public class Window {
     /**
      * Build the components of the window, making it visible as an application.
      */
-    public void build() {
+    private void build() {
         window.setVisible(true);
     }
 
