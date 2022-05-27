@@ -22,9 +22,9 @@ public class Frame {
 
     /**
      * Create a frame with border layout.
-     * @param owner The window.
+     * @param owner {@link Window}
      */
-    public Frame(Window owner) {
+    Frame(Window owner) {
         this.owner = owner;
         frame = owner.getWindow().getContentPane();
         frame.setLayout(new BoxLayout(frame, BoxLayout.PAGE_AXIS));
@@ -32,7 +32,7 @@ public class Frame {
 
     /**
      * Add an event button to the frame, with a default name.
-     * @return Event button.
+     * @return {@link EventButton}
      */
     public EventButton addEventButton(){
         return new EventButton(this);
@@ -41,7 +41,7 @@ public class Frame {
     /**
      * Add an event button to the frame, with a chosen name.
      * @param buttonName The name of the button.
-     * @return Event button.
+     * @return {@link EventButton}
      */
     public EventButton addEventButton(String buttonName){
         return new EventButton(this, buttonName);
@@ -52,7 +52,7 @@ public class Frame {
      * @param buttonName The name of the button.
      * @param width The button width.
      * @param height The button height.
-     * @return Event button.
+     * @return {@link EventButton}
      */
     public EventButton addEventButton(String buttonName, int width, int height){
         return new EventButton(this, buttonName, width, height);
@@ -60,7 +60,7 @@ public class Frame {
 
     /**
      * Add a single line text label to the frame, without a title.
-     * @return Single line text label.
+     * @return {@link SingleLineTextLabel}
      */
     public SingleLineTextLabel addSingleLineTextLabel(){
         return new SingleLineTextLabel(this);
@@ -69,7 +69,7 @@ public class Frame {
     /**
      * Add a single line text label to the frame, with default title and chosen text content.
      * @param singleLineText The text content.
-     * @return Single line text label.
+     * @return {@link SingleLineTextLabel}
      */
     public SingleLineTextLabel addSingleLineTextLabel(String singleLineText){
 
@@ -80,7 +80,7 @@ public class Frame {
      * Add a multi line text box with a scrollbar (if true).
      * Default text box border title.
      * @param addScrollbar If true, adds a scrollbar.
-     * @return Multi line text box.
+     * @return {@link MultiLineTextBox}
      */
     public MultiLineTextBox addMultiLineTextBox(boolean addScrollbar) {
         return new MultiLineTextBox(this, addScrollbar);
@@ -89,7 +89,7 @@ public class Frame {
      * Add a multi line text box with a chosen text content.
      * Default border title.
      * @param content The text content.
-     * @return Multi line text box.
+     * @return {@link MultiLineTextBox}
      */
     public MultiLineTextBox addMultiLineTextBox(String content) {
         return new MultiLineTextBox(this, content);
@@ -100,7 +100,7 @@ public class Frame {
      * Default border title.
      * @param content The text content.
      * @param addScrollbar If true, adds a scrollbar.
-     * @return Multi line text box.
+     * @return {@link MultiLineTextBox}
      */
     public MultiLineTextBox addMultiLineTextBox(String content, boolean addScrollbar) {
         return new MultiLineTextBox(this, content, addScrollbar);
@@ -111,14 +111,14 @@ public class Frame {
      * @param content The text content.
      * @param addScrollbar If true, adds a scrollbar.
      * @param borderTitle The text box border title.
-     * @return Multi line text box.
+     * @return {@link MultiLineTextBox}
      */
     public MultiLineTextBox addMultiLineTextBox(String content, boolean addScrollbar, String borderTitle) {
         return new MultiLineTextBox(this, content, addScrollbar, borderTitle);
     }
 
     /**
-     * @return The window.
+     * @return {@link Window}
      */
     Window getOwner() {
         return owner;

@@ -126,7 +126,7 @@ public class Window {
      * Set the window title.
      * @param title The window title.
      */
-    void setTitle(String title) {
+    public void setTitle(String title) {
         window.setTitle(title);
     }
 
