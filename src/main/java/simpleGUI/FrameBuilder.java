@@ -1,7 +1,5 @@
 package simpleGUI;
 
-import java.awt.*;
-
 /**
  * A frame builder.
  */

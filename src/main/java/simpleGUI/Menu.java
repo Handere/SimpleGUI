@@ -1,9 +1,7 @@
 package simpleGUI;
 
-import jdk.jshell.spi.ExecutionControl;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
 /**
  * A menu.

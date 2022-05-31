@@ -1,7 +1,5 @@
 package simpleGUI;
 
-import jdk.jshell.spi.ExecutionControl;
-
 import javax.swing.*;
 
 /**

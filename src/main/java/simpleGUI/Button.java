@@ -10,6 +10,4 @@ public interface Button {
      * @param buttonName The button name.
      */
     void setButtonName(String buttonName);
-
-    // TODO: Legg til noe logikk...
 }
